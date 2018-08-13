@@ -28,3 +28,5 @@ $ php artisan key:generate
 ```
 
 3. Configura los datos de conexion a la base de datos, serian los parametros que inician con DB_, eso dependera de como tienes configurado tu entorno local. 
+Hola Mundo !!
+Especial
