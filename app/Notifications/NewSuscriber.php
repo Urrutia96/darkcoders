@@ -6,13 +6,11 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Messages\DatabaseMessage;
 use App\User;
 
-class NewUser extends Notification
+class NewSuscriber extends Notification
 {
     use Queueable;
-
     public $fromUser;
 
     /**
@@ -45,7 +43,7 @@ class NewUser extends Notification
     public function toArray($notifiable)
     {
         return [
-            'message'=> $this->fromUser->name . ' Bienvenido!!!'
+            'message' => 'Nuevo usuario se ha suscrito!!'
         ];
     }
 }

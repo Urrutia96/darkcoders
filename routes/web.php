@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Rutas para admin
+
+
+
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::group(['prefix'=>'admin','as'=>'admin'], function(){
+    Route::get('/', function(){
+        return 'index';
+    });
+    Route::get('/users', function(){
+        return 'Users';
+    });
+    Route::get('/cursos', function(){
+        return 'Cursos';
+    });
 });
