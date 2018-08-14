@@ -7,15 +7,31 @@
       app
     >
       <v-list dense>
+        <v-list-tile @click="homeAction">
+          <v-list-tile-action>
+            <v-icon>home</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Home</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="userAction">
+          <v-list-tile-action>
+            <v-icon>face</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Users</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
         <v-list-tile @click="drawer = !drawer">
           <v-list-tile-action>
             <v-icon>dashboard</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Dashboard</v-list-tile-title>
+            <v-list-tile-title>Cursos</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile @click="drawer = !drawer">
+        <v-list-tile href="admin/settings">
           <v-list-tile-action>
             <v-icon>settings</v-icon>
           </v-list-tile-action>
@@ -27,32 +43,26 @@
     </v-navigation-drawer>
     <v-toolbar app fixed clipped-left>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-title>DarkCoders</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn icon>
+         <v-badge left>
+          <span slot="badge">6</span>
+              <v-icon
+                large
+                color="grey lighten-1"
+              >
+                notifications
+          </v-icon>
+         </v-badge>
+      </v-btn>
+      <v-avatar color="grey" size="35">
+        <v-icon>account_circle</v-icon>
+      </v-avatar>
     </v-toolbar>
     <v-content>
-      <v-container fluid fill-height>
-        <v-layout justify-center align-center>
-          <v-flex shrink>
-            <v-tooltip right>
-              <v-btn
-                slot="activator"
-                :href="source"
-                icon
-                large
-                target="_blank"
-              >
-                <v-icon large>code</v-icon>
-              </v-btn>
-              <span>Source</span>
-            </v-tooltip>
-            <v-tooltip right>
-              <v-btn slot="activator" icon large href="https://codepen.io/johnjleider/pen/qxQWda" target="_blank">
-                <v-icon large>mdi-codepen</v-icon>
-              </v-btn>
-              <span>Codepen</span>
-            </v-tooltip>
-          </v-flex>
-        </v-layout>
+      <v-container fluid>
+        <component :is="componente"></component>
       </v-container>
     </v-content>
     <v-footer app fixed>
@@ -62,12 +72,24 @@
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      drawer: true
-    }),
-    props: {
-      source: String
+export default {
+  
+  data: function () {
+    return {
+      drawer: true,
+      componente: "home-dash"
+    }
+  },
+  methods:{
+    homeAction: function(){
+      this.componente = "home-dash";
+    },
+    userAction: function(){
+      this.componente = "users-dash";
+    },
+    cursosAction: function(){
+      this.componente = "cursos-dash";
     }
   }
+};
 </script>

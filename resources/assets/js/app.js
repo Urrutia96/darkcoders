@@ -19,6 +19,8 @@ Vue.use(Vuetify);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 Vue.component('dashboard', require('./components/layouts/DashboardComponent.vue'))
+Vue.component('home-dash',require('./components/admin/HomeComponent.vue'));
+Vue.component('users-dash',require('./components/admin/UsersComponent.vue'));
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 const app = new Vue({
