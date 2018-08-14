@@ -15,9 +15,9 @@
     </head>
     <body>
         
-        <!--  -->
+        <!-- Body -->
         <div id="app">
-            <dashboard ></dashboard>
+            <dashboard></dashboard>
         </div>
 
         <!-- Scripts -->
