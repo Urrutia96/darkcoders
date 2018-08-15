@@ -8,7 +8,8 @@ export default {
         return{
 
         }
-    }
+    },
+    props:['admin']
 }
 </script>
 

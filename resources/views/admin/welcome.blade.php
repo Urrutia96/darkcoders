@@ -17,7 +17,7 @@
         
         <!-- Body -->
         <div id="app">
-            <dashboard></dashboard>
+            <dashboard :admin="{'nombre': 'Santos','email':'urrutia.osmin@gmail.com'}"></dashboard>
         </div>
 
         <!-- Scripts -->

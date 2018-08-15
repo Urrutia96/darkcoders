@@ -16,22 +16,52 @@
             <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile @click="userAction">
-          <v-list-tile-action>
-            <v-icon>face</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Users</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-tile @click="cursosAction">
-          <v-list-tile-action>
-            <v-icon>dashboard</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Cursos</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+        <v-list-group
+            prepend-icon="account_circle"
+            value="true" no-action v-model="usersMenu"
+            >
+            <v-list-tile slot="activator">
+                <v-list-tile-title>Users</v-list-tile-title>
+            </v-list-tile>
+            <v-list-tile @click="userAction">
+              <v-list-tile-title>Ver Usuarios</v-list-tile-title>              
+              <v-list-tile-action>
+                <v-icon>remove_red_eye</v-icon>
+              </v-list-tile-action>
+            </v-list-tile>
+            <v-list-tile @click="userAction">
+              <v-list-tile-title>Editar Usuarios</v-list-tile-title>              
+              <v-list-tile-action>
+                <v-icon>edit</v-icon>
+              </v-list-tile-action>
+            </v-list-tile>
+            <v-list-tile @click="userAction">
+              <v-list-tile-title>Eliminar Usuarios</v-list-tile-title>              
+              <v-list-tile-action>
+                <v-icon>delete</v-icon>
+              </v-list-tile-action>
+            </v-list-tile>
+        </v-list-group>
+        <v-list-group
+            prepend-icon="dashboard" 
+            value="false" v-model="cursosMenu" no-action
+            >
+            <v-list-tile slot="activator">
+                <v-list-tile-title>Cursos</v-list-tile-title>
+            </v-list-tile>
+            <v-list-tile @click="userAction">
+              <v-list-tile-title>Ver Cursos</v-list-tile-title>              
+              <v-list-tile-action>
+                <v-icon>remove_red_eye</v-icon>
+              </v-list-tile-action>
+            </v-list-tile>
+            <v-list-tile @click="userAction">
+              <v-list-tile-title>Nuevo Curso</v-list-tile-title>              
+              <v-list-tile-action>
+                <v-icon>add</v-icon>
+              </v-list-tile-action>
+            </v-list-tile>
+        </v-list-group>
         <v-list-tile href="admin/settings">
           <v-list-tile-action>
             <v-icon>settings</v-icon>
@@ -62,7 +92,8 @@
     </v-toolbar>
     <v-content>
       <v-container fluid>
-        <component :is="componente" v-on:notify="notification+=1"></component>
+        
+        <component :is="componente" v-on:notify="notification+=1" :admin="admin"></component>
       </v-container>
     </v-content>
     <v-footer app fixed v-if="false">
@@ -73,11 +104,14 @@
 
 <script>
 export default {
+  props:['admin'],
   data: function () {
     return {
       drawer: true,
       componente: "home-dash",
-      notification: 0
+      notification: 0,
+      usersMenu: false,
+      cursosMenu:false
     }
   },
   methods:{
