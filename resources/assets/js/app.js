@@ -8,6 +8,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 
@@ -21,7 +22,8 @@ Vue.use(Vuetify);
 Vue.component('dashboard', require('./components/layouts/DashboardComponent.vue'))
 Vue.component('home-dash',require('./components/admin/HomeComponent.vue'));
 Vue.component('users-dash',require('./components/admin/UsersComponent.vue'));
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('cursos-dash',require('./components/admin/CursosComponent.vue'));
+
 
 const app = new Vue({
     el: '#app'

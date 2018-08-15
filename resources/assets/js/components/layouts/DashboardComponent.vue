@@ -2,12 +2,13 @@
   <v-app id="inspire" dark>
     <v-navigation-drawer
       v-model="drawer"
+      width="250"
       clipped
-      fixed
       app
+      absolute
     >
       <v-list dense>
-        <v-list-tile @click="homeAction">
+        <v-list-tile @click="homeAction" aria-selected>
           <v-list-tile-action>
             <v-icon>home</v-icon>
           </v-list-tile-action>
@@ -23,7 +24,7 @@
             <v-list-tile-title>Users</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile @click="drawer = !drawer">
+        <v-list-tile @click="cursosAction">
           <v-list-tile-action>
             <v-icon>dashboard</v-icon>
           </v-list-tile-action>
@@ -45,11 +46,10 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>DarkCoders</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon>
+      <v-btn icon @click="notification =0">
          <v-badge left>
-          <span slot="badge">6</span>
+          <span slot="badge" v-if="notification!=0">{{ notification }}</span>
               <v-icon
-                large
                 color="grey lighten-1"
               >
                 notifications
@@ -62,7 +62,7 @@
     </v-toolbar>
     <v-content>
       <v-container fluid>
-        <component :is="componente"></component>
+        <component :is="componente" v-on:notify="notification+=1"></component>
       </v-container>
     </v-content>
     <v-footer app fixed>
@@ -73,11 +73,11 @@
 
 <script>
 export default {
-  
   data: function () {
     return {
       drawer: true,
-      componente: "home-dash"
+      componente: "home-dash",
+      notification: 0
     }
   },
   methods:{

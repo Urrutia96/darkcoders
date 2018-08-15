@@ -23,6 +23,7 @@
 <script>
     export default {
         destroyed: function(){
+            this.$emit('notify',1);
             console.log('destruido');
         },
         created: function(){
