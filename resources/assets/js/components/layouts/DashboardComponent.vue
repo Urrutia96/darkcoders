@@ -8,7 +8,7 @@
       absolute
     >
       <v-list dense>
-        <v-list-tile @click="homeAction" aria-selected>
+        <v-list-tile @click="homeAction">
           <v-list-tile-action>
             <v-icon>home</v-icon>
           </v-list-tile-action>
@@ -65,7 +65,7 @@
         <component :is="componente" v-on:notify="notification+=1"></component>
       </v-container>
     </v-content>
-    <v-footer app fixed>
+    <v-footer app fixed v-if="false">
       <span>&copy; 2018 <strong>by santos96</strong></span>
     </v-footer>
   </v-app>
