@@ -24990,7 +24990,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vuetify___default.a);
 Vue.component('dashboard', __webpack_require__(46));
 Vue.component('home-dash', __webpack_require__(49));
 Vue.component('users-dash', __webpack_require__(52));
-Vue.component('cursos-dash', __webpack_require__(60));
+Vue.component('cursos-dash', __webpack_require__(55));
 
 var app = new Vue({
   el: '#app'
@@ -68030,7 +68030,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/layouts/DashboardComponent.vue"
+Component.options.__file = "resources\\assets\\js\\components\\layouts\\DashboardComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -68039,9 +68039,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0d97abf4", Component.options)
+    hotAPI.createRecord("data-v-3af6f7b3", Component.options)
   } else {
-    hotAPI.reload("data-v-0d97abf4", Component.options)
+    hotAPI.reload("data-v-3af6f7b3", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -68351,7 +68351,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0d97abf4", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-3af6f7b3", module.exports)
   }
 }
 
@@ -68381,7 +68381,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/admin/HomeComponent.vue"
+Component.options.__file = "resources\\assets\\js\\components\\admin\\HomeComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -68390,9 +68390,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1a79efb7", Component.options)
+    hotAPI.createRecord("data-v-524639ea", Component.options)
   } else {
-    hotAPI.reload("data-v-1a79efb7", Component.options)
+    hotAPI.reload("data-v-524639ea", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -68491,7 +68491,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1a79efb7", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-524639ea", module.exports)
   }
 }
 
@@ -68521,7 +68521,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/admin/UsersComponent.vue"
+Component.options.__file = "resources\\assets\\js\\components\\admin\\UsersComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -68530,9 +68530,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-21e75268", Component.options)
+    hotAPI.createRecord("data-v-9e6d5a0e", Component.options)
   } else {
-    hotAPI.reload("data-v-21e75268", Component.options)
+    hotAPI.reload("data-v-9e6d5a0e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -68618,30 +68618,20 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-21e75268", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-9e6d5a0e", module.exports)
   }
 }
 
 /***/ }),
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 59 */,
-/* 60 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(61)
+var __vue_script__ = __webpack_require__(56)
 /* template */
-var __vue_template__ = __webpack_require__(62)
+var __vue_template__ = __webpack_require__(57)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -68658,7 +68648,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/admin/CursosComponent.vue"
+Component.options.__file = "resources\\assets\\js\\components\\admin\\CursosComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -68667,9 +68657,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-dde27002", Component.options)
+    hotAPI.createRecord("data-v-06f15172", Component.options)
   } else {
-    hotAPI.reload("data-v-dde27002", Component.options)
+    hotAPI.reload("data-v-06f15172", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -68680,7 +68670,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 61 */
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68697,7 +68687,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 62 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -68712,9 +68702,15 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-dde27002", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-06f15172", module.exports)
   }
 }
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: ENOENT: no such file or directory, scandir 'C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\node-sass\\vendor'\n    at Object.readdirSync (fs.js:750:3)\n    at Object.getInstalledBinaries (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\node-sass\\lib\\extensions.js:129:13)\n    at foundBinariesList (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\node-sass\\lib\\errors.js:20:15)\n    at foundBinaries (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\node-sass\\lib\\errors.js:15:5)\n    at Object.module.exports.missingBinary (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\node-sass\\lib\\errors.js:45:5)\n    at module.exports (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\node-sass\\lib\\binding.js:15:30)\n    at Object.<anonymous> (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\node-sass\\lib\\index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:689:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)\n    at Module.load (internal/modules/cjs/loader.js:599:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:530:3)\n    at Module.require (internal/modules/cjs/loader.js:637:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\sass-loader\\lib\\loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:689:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)\n    at Module.load (internal/modules/cjs/loader.js:599:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:530:3)\n    at Module.require (internal/modules/cjs/loader.js:637:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\loadLoader.js:13:17)\n    at iteratePitchingLoaders (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at runLoaders (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:170:18\n    at loadLoader (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\loadLoader.js:27:11)\n    at iteratePitchingLoaders (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at runLoaders (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\loader-runner\\lib\\LoaderRunner.js:362:2)\n    at NormalModule.doBuild (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\webpack\\lib\\NormalModule.js:182:3)\n    at NormalModule.build (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\webpack\\lib\\NormalModule.js:275:15)\n    at Compilation.buildModule (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\webpack\\lib\\Compilation.js:157:10)\n    at moduleFactory.create (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\webpack\\lib\\Compilation.js:460:10)\n    at factory (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\webpack\\lib\\NormalModuleFactory.js:243:5)\n    at applyPluginsAsyncWaterfall (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\webpack\\lib\\NormalModuleFactory.js:94:13)\n    at C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\tapable\\lib\\Tapable.js:268:11\n    at NormalModuleFactory.params.normalModuleFactory.plugin (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\webpack\\lib\\CompatibilityPlugin.js:52:5)\n    at NormalModuleFactory.applyPluginsAsyncWaterfall (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\tapable\\lib\\Tapable.js:272:13)\n    at resolver (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\webpack\\lib\\NormalModuleFactory.js:69:10)\n    at process.nextTick (C:\\Users\\ale_t\\Documents\\ProyectoGitlab\\darkcoders\\node_modules\\webpack\\lib\\NormalModuleFactory.js:196:7)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
 
 /***/ })
 /******/ ]);
