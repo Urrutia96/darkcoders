@@ -68183,10 +68183,7 @@ var render = function() {
             [
               _c(
                 "v-list-tile",
-                {
-                  attrs: { "aria-selected": "" },
-                  on: { click: _vm.homeAction }
-                },
+                { on: { click: _vm.homeAction } },
                 [
                   _c("v-list-tile-action", [_c("v-icon", [_vm._v("home")])], 1),
                   _vm._v(" "),
@@ -68338,9 +68335,14 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("v-footer", { attrs: { app: "", fixed: "" } }, [
-        _c("span", [_vm._v("© 2018 "), _c("strong", [_vm._v("by santos96")])])
-      ])
+      false
+        ? _c("v-footer", { attrs: { app: "", fixed: "" } }, [
+            _c("span", [
+              _vm._v("© 2018 "),
+              _c("strong", [_vm._v("by santos96")])
+            ])
+          ])
+        : _vm._e()
     ],
     1
   )
@@ -68421,15 +68423,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     destroyed: function destroyed() {
@@ -68453,28 +68446,25 @@ var render = function() {
     "div",
     [
       _c(
-        "v-card",
+        "v-jumbotron",
+        { attrs: { color: "#444444" } },
         [
-          _c("v-card-title", [
-            _c("div", { staticClass: "text-xs-center" }, [
-              _vm._v("\n                Home  \n            ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("v-card-text", [
-            _vm._v(
-              "\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis molestiae omnis saepe dolor repudiandae, quod esse fuga ratione laudantium doloribus ipsam? Expedita ipsam, vero quaerat porro sequi itaque illum eos!\n            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem tempore, vero nemo at impedit adipisci hic necessitatibus ea explicabo? Expedita laborum eligendi sunt. Natus, aliquam ipsum. Debitis nisi repellendus corrupti.\n            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus corporis repellendus, eius debitis, repellat iste quam maiores nulla fugit non explicabo architecto expedita dicta neque natus deserunt rem? Facere?\n        "
-            )
-          ]),
-          _vm._v(" "),
           _c(
-            "v-card-actions",
+            "v-container",
+            { attrs: { "fill-height": "" } },
             [
-              _c("v-spacer"),
-              _vm._v(" "),
-              _c("v-btn", [_vm._v(" cancelar")]),
-              _vm._v(" "),
-              _c("v-btn", { attrs: { color: "green" } }, [_vm._v("Aceptar")])
+              _c(
+                "v-layout",
+                { attrs: { "align-center": "" } },
+                [
+                  _c("v-flex", [
+                    _c("h3", { staticClass: "display-3 text-xs-center" }, [
+                      _vm._v("Welcome")
+                    ])
+                  ])
+                ],
+                1
+              )
             ],
             1
           )
