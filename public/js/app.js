@@ -68125,13 +68125,47 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['admin'],
   data: function data() {
     return {
       drawer: true,
       componente: "home-dash",
-      notification: 0
+      notification: 0,
+      usersMenu: false,
+      cursosMenu: false
     };
   },
   methods: {
@@ -68192,14 +68226,71 @@ var render = function() {
               ),
               _vm._v(" "),
               _c(
-                "v-list-tile",
-                { on: { click: _vm.userAction } },
+                "v-list-group",
+                {
+                  attrs: {
+                    "prepend-icon": "account_circle",
+                    value: "true",
+                    "no-action": ""
+                  },
+                  model: {
+                    value: _vm.usersMenu,
+                    callback: function($$v) {
+                      _vm.usersMenu = $$v
+                    },
+                    expression: "usersMenu"
+                  }
+                },
                 [
-                  _c("v-list-tile-action", [_c("v-icon", [_vm._v("face")])], 1),
+                  _c(
+                    "v-list-tile",
+                    { attrs: { slot: "activator" }, slot: "activator" },
+                    [_c("v-list-tile-title", [_vm._v("Users")])],
+                    1
+                  ),
                   _vm._v(" "),
                   _c(
-                    "v-list-tile-content",
-                    [_c("v-list-tile-title", [_vm._v("Users")])],
+                    "v-list-tile",
+                    { on: { click: _vm.userAction } },
+                    [
+                      _c("v-list-tile-title", [_vm._v("Ver Usuarios")]),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-tile-action",
+                        [_c("v-icon", [_vm._v("remove_red_eye")])],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile",
+                    { on: { click: _vm.userAction } },
+                    [
+                      _c("v-list-tile-title", [_vm._v("Editar Usuarios")]),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-tile-action",
+                        [_c("v-icon", [_vm._v("edit")])],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile",
+                    { on: { click: _vm.userAction } },
+                    [
+                      _c("v-list-tile-title", [_vm._v("Eliminar Usuarios")]),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-tile-action",
+                        [_c("v-icon", [_vm._v("delete")])],
+                        1
+                      )
+                    ],
                     1
                   )
                 ],
@@ -68207,18 +68298,56 @@ var render = function() {
               ),
               _vm._v(" "),
               _c(
-                "v-list-tile",
-                { on: { click: _vm.cursosAction } },
+                "v-list-group",
+                {
+                  attrs: {
+                    "prepend-icon": "dashboard",
+                    value: "false",
+                    "no-action": ""
+                  },
+                  model: {
+                    value: _vm.cursosMenu,
+                    callback: function($$v) {
+                      _vm.cursosMenu = $$v
+                    },
+                    expression: "cursosMenu"
+                  }
+                },
                 [
                   _c(
-                    "v-list-tile-action",
-                    [_c("v-icon", [_vm._v("dashboard")])],
+                    "v-list-tile",
+                    { attrs: { slot: "activator" }, slot: "activator" },
+                    [_c("v-list-tile-title", [_vm._v("Cursos")])],
                     1
                   ),
                   _vm._v(" "),
                   _c(
-                    "v-list-tile-content",
-                    [_c("v-list-tile-title", [_vm._v("Cursos")])],
+                    "v-list-tile",
+                    { on: { click: _vm.userAction } },
+                    [
+                      _c("v-list-tile-title", [_vm._v("Ver Cursos")]),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-tile-action",
+                        [_c("v-icon", [_vm._v("remove_red_eye")])],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile",
+                    { on: { click: _vm.userAction } },
+                    [
+                      _c("v-list-tile-title", [_vm._v("Nuevo Curso")]),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-tile-action",
+                        [_c("v-icon", [_vm._v("add")])],
+                        1
+                      )
+                    ],
                     1
                   )
                 ],
@@ -68317,6 +68446,7 @@ var render = function() {
             [
               _c(_vm.componente, {
                 tag: "component",
+                attrs: { admin: _vm.admin },
                 on: {
                   notify: function($event) {
                     _vm.notification += 1
@@ -68416,10 +68546,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {};
+    },
+    props: ['admin'],
     destroyed: function destroyed() {
         this.$emit('notify', 1);
         console.log('destruido');
@@ -68438,28 +68570,22 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "v-jumbotron",
+    { attrs: { color: "#444444" } },
     [
       _c(
-        "v-jumbotron",
-        { attrs: { color: "#444444" } },
+        "v-container",
+        { attrs: { "fill-height": "" } },
         [
           _c(
-            "v-container",
-            { attrs: { "fill-height": "" } },
+            "v-layout",
+            { attrs: { "align-center": "" } },
             [
-              _c(
-                "v-layout",
-                { attrs: { "align-center": "" } },
-                [
-                  _c("v-flex", [
-                    _c("h3", { staticClass: "display-3 text-xs-center" }, [
-                      _vm._v("Welcome")
-                    ])
-                  ])
-                ],
-                1
-              )
+              _c("v-flex", [
+                _c("h3", { staticClass: "display-3 text-xs-center" }, [
+                  _vm._v("Welcome " + _vm._s(_vm.admin.nombre))
+                ])
+              ])
             ],
             1
           )
@@ -68555,7 +68681,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['admin']
+});
 
 /***/ }),
 /* 54 */
@@ -68668,7 +68796,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {};
-    }
+    },
+    props: ['admin']
 });
 
 /***/ }),
