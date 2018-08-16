@@ -18,8 +18,8 @@
         
         <!-- Body -->
         <header>
-        <h1 class="align center">Login</h1>
-    </header>
+            <h1 class="align center">Login</h1>
+        </header>
     <div class="container">
         <section>
 
@@ -47,13 +47,17 @@
                                         <label for="password">Password</label>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col s12">
+                                    <div class="row">
+                                    <div class="col s4"></div>
+                                    <div class="col s4">
                                         <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
                                             <i class="material-icons right">send</i>
                                         </button>
-                                        | <a href="{{ url('user/registrarse') }}">Registrarse</a>
+                                        <br>    
+                                        <br>
+                                         <a href="{{ url('user/registrarse') }}">Registrarse</a>
                                     </div>
+                                    <div class="col s4"></div>
                                 </div>
                             </form>
                         </div>
