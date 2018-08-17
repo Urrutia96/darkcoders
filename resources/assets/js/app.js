@@ -11,9 +11,13 @@ window.Vue = require('vue');
 
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
+import VeeValidate from 'vee-validate';
+//import axios from 'axios';
 
 
 Vue.use(Vuetify);
+Vue.use(VeeValidate);
+//Vue.use(axios);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -23,7 +27,7 @@ Vue.component('dashboard', require('./components/layouts/DashboardComponent.vue'
 Vue.component('home-dash',require('./components/admin/HomeComponent.vue'));
 Vue.component('users-dash',require('./components/admin/UsersComponent.vue'));
 Vue.component('cursos-dash',require('./components/admin/CursosComponent.vue'));
-
+Vue.component('registro',require('./components/RegistroComponent.vue'));
 
 const app = new Vue({
     el: '#app'

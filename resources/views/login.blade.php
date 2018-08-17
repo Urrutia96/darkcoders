@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="{{ asset('css/materialize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 </head>
- <!-- Body -->
+
 <body>
 
-   
+    <!-- Body -->
     <header>
         <h1 class="align center">Login</h1>
     </header>
@@ -33,7 +33,7 @@
                     <div class="col s12 m10 l4">
                         <div class="row">
 
-                            <form class="col s12" action=" {{ route('registro.store') }} ">
+                            <form class="col s12">
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="email_inline" type="email" class="validate">
@@ -55,7 +55,7 @@
                                         </button>
                                         <br>
                                         <br>
-                                        <a href="{{ url('user/registrarse') }}">Registrarse</a>
+                                        <a href="{{ route('registro') }}">Registrarse</a>
                                     </div>
                                     <div class="col s4"></div>
                                 </div>
@@ -71,6 +71,7 @@
     </div>
 
     <!-- Footer -->
+    <!--
     <footer>
         <div class="row">
             <div class="col s12">
@@ -84,6 +85,7 @@
             </div>
         </div>
     </footer>
+    -->
     <!-- EndFooter -->
 
     <!-- Scripts -->
