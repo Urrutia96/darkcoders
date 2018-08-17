@@ -11,14 +11,14 @@
 |
 */
 
-//Rutas para admin
-
-
-
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/','HomeController@index')->name('home');
+Route::get('login', 'HomeController@login')->name('login');
 Route::get('registro','HomeController@registro')->name('registro');
+Route::post('registro','UserController@store')->name('registro.store');
 
-Route::group(['prefix'=>'admin','as'=>'admin'], function(){
+
+//Rutas para admin/dashboard
+Route::group(['prefix'=>'admin'], function(){
     Route::get('/', 'Admin\HomeController@index');
     Route::get('/users', 'Admin\UsersController@index');
     Route::get('/cursos', 'Admin\CursosController@index');
