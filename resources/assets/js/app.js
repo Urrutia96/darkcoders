@@ -12,11 +12,17 @@ window.Vue = require('vue');
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 import VeeValidate from 'vee-validate';
+import attrEs from 'vee-validate/dist/locale/es.js'
 //import axios from 'axios';
 
 
 Vue.use(Vuetify);
-Vue.use(VeeValidate);
+Vue.use(VeeValidate,{
+    locale:'es',
+    dictionary:{
+        es: attrEs
+    }
+});
 //Vue.use(axios);
 /**
  * Next, we will create a fresh Vue application instance and attach it to

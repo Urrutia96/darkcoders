@@ -74,13 +74,12 @@
                     repassword:'',
                 },
                 dict: {
-                    custom: {
-                        email: {
-                            required: 'El email es obligatorio',
-                            
-                        },
-                        name: {
-                            required: () => 'El nombre es obligatorio'
+                    es:{
+                        attributes:{
+                            email: 'correo electrónico',
+                            name: 'nombre',
+                            password: 'contraseña',
+                            repassword: 'confirmar contraseña'
                         }
                     }
                 }
@@ -91,7 +90,7 @@
         },
         methods:{
             submitPrevent:function(){
-                this.$validator.localize('es', this.dict);
+                this.$validator.localize(this.dict);
                 this.$validator.validate().then(result => {
                     console.log(result);
                     if (!result) {
