@@ -22,7 +22,7 @@
          </header>
         <div id="app">
             <div class="container">
-                <registro></registro>
+                <registro :token="'{{ csrf_token() }}'"></registro>
             </div>
         </div>
     <!--

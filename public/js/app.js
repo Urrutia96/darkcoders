@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 15);
+/******/ 	return __webpack_require__(__webpack_require__.s = 16);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,7 +70,7 @@
 "use strict";
 
 
-var bind = __webpack_require__(6);
+var bind = __webpack_require__(7);
 var isBuffer = __webpack_require__(23);
 
 /*global toString:true*/
@@ -533,10 +533,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(8);
+    adapter = __webpack_require__(9);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(8);
+    adapter = __webpack_require__(9);
   }
   return adapter;
 }
@@ -611,7 +611,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
 /* 4 */
@@ -13529,6 +13529,12 @@ return jQuery;
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(22);
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -13544,7 +13550,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -13734,7 +13740,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13745,7 +13751,7 @@ var settle = __webpack_require__(26);
 var buildURL = __webpack_require__(28);
 var parseHeaders = __webpack_require__(29);
 var isURLSameOrigin = __webpack_require__(30);
-var createError = __webpack_require__(9);
+var createError = __webpack_require__(10);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(31);
 
 module.exports = function xhrAdapter(config) {
@@ -13921,7 +13927,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13946,7 +13952,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13958,7 +13964,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13984,7 +13990,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24950,7 +24956,7 @@ module.exports = Vue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(40).setImmediate))
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 /*
@@ -25032,7 +25038,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32809,15 +32815,15 @@ var index_esm = {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(16);
+__webpack_require__(17);
 module.exports = __webpack_require__(67);
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32826,7 +32832,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuetify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuetify__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuetify_dist_vuetify_min_css__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuetify_dist_vuetify_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuetify_dist_vuetify_min_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vee_validate_dist_locale_es_js__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vee_validate_dist_locale_es_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vee_validate_dist_locale_es_js__);
 
@@ -32836,9 +32842,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(17);
+__webpack_require__(18);
 
-window.Vue = __webpack_require__(12);
+window.Vue = __webpack_require__(13);
 
 
 
@@ -32871,11 +32877,11 @@ var app = new Vue({
 });
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(18);
+window._ = __webpack_require__(19);
 window.Popper = __webpack_require__(4).default;
 
 /**
@@ -32887,7 +32893,7 @@ window.Popper = __webpack_require__(4).default;
 try {
   window.$ = window.jQuery = __webpack_require__(5);
 
-  __webpack_require__(20);
+  __webpack_require__(21);
 } catch (e) {}
 
 /**
@@ -32896,7 +32902,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(21);
+window.axios = __webpack_require__(6);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -32932,7 +32938,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -50042,10 +50048,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(19)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(20)(module)))
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -50073,7 +50079,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -54023,12 +54029,6 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(22);
-
-/***/ }),
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -54036,7 +54036,7 @@ module.exports = __webpack_require__(22);
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(6);
+var bind = __webpack_require__(7);
 var Axios = __webpack_require__(24);
 var defaults = __webpack_require__(3);
 
@@ -54071,9 +54071,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(11);
+axios.Cancel = __webpack_require__(12);
 axios.CancelToken = __webpack_require__(38);
-axios.isCancel = __webpack_require__(10);
+axios.isCancel = __webpack_require__(11);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -54226,7 +54226,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(9);
+var createError = __webpack_require__(10);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -54659,7 +54659,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(0);
 var transformData = __webpack_require__(35);
-var isCancel = __webpack_require__(10);
+var isCancel = __webpack_require__(11);
 var defaults = __webpack_require__(3);
 var isAbsoluteURL = __webpack_require__(36);
 var combineURLs = __webpack_require__(37);
@@ -54819,7 +54819,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(11);
+var Cancel = __webpack_require__(12);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -55171,7 +55171,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(8)))
 
 /***/ }),
 /* 42 */
@@ -55179,7 +55179,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(true)
-		module.exports = factory(__webpack_require__(12));
+		module.exports = factory(__webpack_require__(13));
 	else if(typeof define === 'function' && define.amd)
 		define(["vue"], factory);
 	else if(typeof exports === 'object')
@@ -75327,7 +75327,7 @@ if(false) {
 /* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(13)(false);
+exports = module.exports = __webpack_require__(14)(false);
 // imports
 
 
@@ -76699,7 +76699,7 @@ if(false) {
 /* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(13)(false);
+exports = module.exports = __webpack_require__(14)(false);
 // imports
 
 
@@ -76976,7 +76976,9 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vee_validate__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vee_validate__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 //
 //
 //
@@ -77037,21 +77039,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['token'],
     data: function data() {
         return {
             nombre: '',
             email: '',
             password: '',
             repassword: '',
-            validacion: {
-                nombre: '',
-                email: '',
-                password: '',
-                repassword: ''
-            },
+            vnombre: '',
+            vemail: '',
+            vpassword: '',
+            vrepassword: '',
             dict: {
                 es: {
                     attributes: {
@@ -77064,18 +77067,45 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         };
     },
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    },
+
 
     methods: {
-        submitPrevent: function submitPrevent() {
+        submitPrevent: function submitPrevent(e) {
+            var _this = this;
+
             this.$validator.localize(this.dict);
             this.$validator.validate().then(function (result) {
-                console.log(result);
                 if (!result) {
-                    // do stuff if not valid.
-                    console.log('algo falla');
+                    console.log('error');
+                } else {
+                    var self = _this;
+                    __WEBPACK_IMPORTED_MODULE_1_axios___default()({
+                        method: 'post',
+                        url: '/registrovalidate',
+                        data: {
+                            name: _this.nombre,
+                            email: _this.email,
+                            password: _this.password,
+                            password_confirmation: _this.repassword,
+                            _token: _this.token
+                        },
+                        header: { 'Accept': 'application/json' }
+                    }).then(function (response) {
+                        var ready = false;
+                        if (typeof response.data.email == true) {
+                            console.log('aca tambien');
+                            self.vemail = response.data.email[0];
+                        } else {
+                            ready = true;
+                        }
+
+                        if (ready) {
+                            console.log('aca ' + self.vemail);
+                            self.$refs.form.submit();
+                        }
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
                 }
             });
         }
@@ -77100,7 +77130,9 @@ var render = function() {
             _c(
               "form",
               {
+                ref: "form",
                 staticClass: "col s12",
+                attrs: { action: "/registro", method: "post" },
                 on: {
                   submit: function($event) {
                     $event.preventDefault()
@@ -77109,6 +77141,11 @@ var render = function() {
                 }
               },
               [
+                _c("input", {
+                  attrs: { type: "hidden", name: "_token" },
+                  domProps: { value: _vm.token }
+                }),
+                _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "input-field col s12" }, [
                     _c("input", {
@@ -77127,7 +77164,11 @@ var render = function() {
                         }
                       ],
                       staticClass: "validate",
-                      attrs: { "data-vv-name": "name", type: "text" },
+                      attrs: {
+                        "data-vv-name": "name",
+                        type: "text",
+                        name: "name"
+                      },
                       domProps: { value: _vm.nombre },
                       on: {
                         input: function($event) {
@@ -77169,7 +77210,11 @@ var render = function() {
                         }
                       ],
                       staticClass: "validate",
-                      attrs: { "data-vv-name": "email", type: "text" },
+                      attrs: {
+                        "data-vv-name": "email",
+                        type: "text",
+                        name: "email"
+                      },
                       domProps: { value: _vm.email },
                       on: {
                         input: function($event) {
@@ -77187,13 +77232,13 @@ var render = function() {
                       ? _c("span", { staticClass: "error" }, [
                           _vm._v(_vm._s(_vm.errors.first("email")))
                         ])
-                      : _vm._e(),
+                      : _c("span"),
                     _vm._v(" "),
-                    _vm.validacion.email != ""
+                    _vm.vemail !== ""
                       ? _c("span", { staticClass: "error" }, [
-                          _vm._v(_vm._s(_vm.validacion.email))
+                          _vm._v(_vm._s(_vm.vemail))
                         ])
-                      : _vm._e()
+                      : _c("span")
                   ])
                 ]),
                 _vm._v(" "),
@@ -77216,7 +77261,11 @@ var render = function() {
                       ],
                       ref: "pass",
                       staticClass: "validate",
-                      attrs: { "data-vv-name": "password", type: "password" },
+                      attrs: {
+                        "data-vv-name": "password",
+                        type: "password",
+                        name: "password"
+                      },
                       domProps: { value: _vm.password },
                       on: {
                         input: function($event) {
@@ -77258,7 +77307,11 @@ var render = function() {
                         }
                       ],
                       staticClass: "validate",
-                      attrs: { "data-vv-name": "repassword", type: "password" },
+                      attrs: {
+                        "data-vv-name": "repassword",
+                        type: "password",
+                        name: "password_confirmation"
+                      },
                       domProps: { value: _vm.repassword },
                       on: {
                         input: function($event) {

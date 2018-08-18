@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/','HomeController@index')->name('home');
-Route::get('login', 'HomeController@login')->name('login');
-Route::get('registro','HomeController@registro')->name('registro');
-Route::post('registro','UserController@store')->name('registro.store');
+Route::get('/','HomeController@login')->name('home');
+Route::get('login', 'Users\UsersController@showLoginForm')->name('login');
+Route::post('login','Users\UsersController@loggin')->name('loggin');
+Route::get('registro','Users\UsersController@showRegistroForm')->name('registro');
+Route::post('registrovalidate','Users\UsersController@validateRegistro');
+Route::post('registro','Users\UsersController@store')->name('registro.store');
 
 
 //Rutas para admin/dashboard
