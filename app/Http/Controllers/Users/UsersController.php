@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
+use App\User;
 
 class UsersController extends Controller
 {
@@ -20,7 +23,7 @@ class UsersController extends Controller
     }
 
     /**
-     * 
+     * validar datos desde Vue y axios
      * 
      * 
      */
@@ -58,12 +61,22 @@ class UsersController extends Controller
     }
 
     /**
-     * 
+     * inicio de session
      * 
      * 
      */
     public function login(Request $request){
-
+        $email = $request->email;
+        $password = $request->password;
+        $user=User::where('email',$email)->first();
+        if($user){
+            if(Auth::attempt(['email' => $email, 'password' => $password])){
+                return redirect()->route('home');
+            }else{
+                return redirect()->route('login')->withErrors(['email'=>'Verifica el correo o la contraseña.'])->withInput(); 
+            }
+        }
+        return redirect()->route('login')->withErrors(['email'=>'Este email no esta registrado, porfavor crea primero una cuenta.']);
     }
 
 }

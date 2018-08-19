@@ -28,22 +28,22 @@
             <article>
                 <div class="row">
                     <div class="col s0 m1 l4">
-
                     </div>
                     <div class="col s12 m10 l4">
                         <div class="row">
-
-                            <form class="col s12">
+                            <form class="col s12" method="POST" action="{{route('loggin')}}">
+                                {{ csrf_field() }}
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="email_inline" type="email" class="validate">
+                                        <input id="email_inline" type="email" name="email" class="validate" value="{{ old('email') }}">
                                         <label for="email_inline">Email</label>
-                                        <span class="helper-text" data-error="wrong" data-success="right"></span>
+                                        <span class="helper-text" data-error="Escribe correctamente el correo"></span>
+                                        {!! $errors->first('email', '<span class="error">:message</span>') !!}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="password" type="password" class="validate">
+                                        <input id="password" type="password" name="password">
                                         <label for="password">Password</label>
                                     </div>
                                 </div>
@@ -61,7 +61,6 @@
                                 </div>
                             </form>
                         </div>
-
                     </div>
                     <div class="col s0 m1 l4"></div>
                 </div>
