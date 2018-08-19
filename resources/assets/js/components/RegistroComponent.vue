@@ -92,7 +92,7 @@
                 this.$validator.localize(this.dict);
                 this.$validator.validate().then(result => {
                     if (!result) {
-                        console.log('error');    
+                         
                     }else{
                         var self = this;
                         axios({
@@ -108,16 +108,14 @@
                             header:{'Accept':'application/json'}
                         }).then(function (response) {
                             var ready = false;
-                            if(typeof response.data.email == true){
-                                console.log('aca tambien');
-                                self.vemail = response.data.email[0];
+                            if(Array.isArray(response.data.email)){
                                 
+                                self.vemail = response.data.email[0];
                             }else{
                                 ready = true
-                            }
-
+                            }   
                             if(ready){
-                                console.log('aca '+ self.vemail);
+                                
                                 self.$refs.form.submit();
                             }
                         }).catch(error =>{

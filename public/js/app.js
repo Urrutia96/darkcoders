@@ -77075,9 +77075,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$validator.localize(this.dict);
             this.$validator.validate().then(function (result) {
-                if (!result) {
-                    console.log('error');
-                } else {
+                if (!result) {} else {
                     var self = _this;
                     __WEBPACK_IMPORTED_MODULE_1_axios___default()({
                         method: 'post',
@@ -77092,15 +77090,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         header: { 'Accept': 'application/json' }
                     }).then(function (response) {
                         var ready = false;
-                        if (typeof response.data.email == true) {
-                            console.log('aca tambien');
+                        if (Array.isArray(response.data.email)) {
+
                             self.vemail = response.data.email[0];
                         } else {
                             ready = true;
                         }
-
                         if (ready) {
-                            console.log('aca ' + self.vemail);
+
                             self.$refs.form.submit();
                         }
                     }).catch(function (error) {
