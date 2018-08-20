@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/','HomeController@index')->name('home');
+Route::get('/','HomeController@index')->name('home'); 
 Route::get('login', 'Users\UsersController@showLoginForm')->name('login');
 Route::post('login','Users\UsersController@login')->name('loggin');
 Route::get('registro','Users\UsersController@showRegistroForm')->name('registro');

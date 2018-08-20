@@ -73,10 +73,24 @@ class UsersController extends Controller
             if(Auth::attempt(['email' => $email, 'password' => $password])){
                 return redirect()->route('home');
             }else{
-                return redirect()->route('login')->withErrors(['email'=>'Verifica el correo o la contraseña.'])->withInput(); 
+                return redirect()->route('login')->withErrors([
+                    'email'=>'Verifica el correo o la contraseña.'
+                ])->withInput(); 
             }
         }
-        return redirect()->route('login')->withErrors(['email'=>'Este email no esta registrado, porfavor crea primero una cuenta.']);
+        return redirect()->route('login')->withErrors([
+            'email'=>'Este email no esta registrado, porfavor crea primero una cuenta.'
+        ]);
+    }
+
+    /**
+     * 
+     * 
+     * 
+     * 
+     */
+    public function as(Request $request){
+        
     }
 
 }
