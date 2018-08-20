@@ -13,6 +13,17 @@ use App\User;
 
 class UsersController extends Controller
 {
+
+    
+    /**
+     * Mostrar Index
+     * 
+     * 
+     */
+
+    public function index(){
+        return view('index');
+    }
     /**
      * Mostrar formulario de Registro
      * 

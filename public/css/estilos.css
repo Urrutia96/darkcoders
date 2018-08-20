@@ -9,3 +9,36 @@
     font-size: 12px;
     color: #FF4081;
 }
+/*
+ *Alexis Tobar
+*/
+@font-face{
+	font-family: fIndie;
+	src:url(../fonts/Indie_Flower/IndieFlower.ttf);
+}
+@font-face{
+	font-family: fOswald;
+	src:url(../fonts/Oswald/Oswald-Bold.ttf);
+}
+body{
+	font-family: fIndie;
+
+}
+h1,h2,h3{
+	font-family: fOswald;
+}
+.card{
+	width: auto;
+	height: 100px;
+	background: white;
+	padding: 0.5em;
+}
+.panel{
+	 font-size: 2em;
+	 text-align: justify;
+}
+div #banner{
+    background: url(../img/desktop.jpg) top left no-repeat;
+    background-size: 100%;
+    border-radius: 1em;
+}
