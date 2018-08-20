@@ -11,12 +11,15 @@
 |
 */
 
-Route::get('/','HomeController@index')->name('home'); 
+//Route::get('/','HomeController@index')->name('home');
 Route::get('login', 'Users\UsersController@showLoginForm')->name('login');
 Route::post('login','Users\UsersController@login')->name('loggin');
 Route::get('registro','Users\UsersController@showRegistroForm')->name('registro');
 Route::post('registrovalidate','Users\UsersController@validateRegistro'); //Verificar validacion de formulario de registro desde Vue-Axiosjs
 Route::post('registro','Users\UsersController@store')->name('registro.store');
+
+//Prueba de vista de HOME
+Route::get('index', 'Users\UsersController@index')->name('home');
 
 
 //Rutas para admin/dashboard
