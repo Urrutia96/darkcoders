@@ -22,7 +22,7 @@ class UsersController extends Controller
      */
 
     public function index(){
-        return view('index');
+        return view('welcome');
     }
     /**
      * Mostrar formulario de Registro
@@ -95,13 +95,14 @@ class UsersController extends Controller
     }
 
     /**
-     * 
+     * Cerrar secion 
      * 
      * 
      * 
      */
-    public function as(Request $request){
-        
+    public function logout(Request $request){
+        Auth::logout();
+        return redirect()->route('home');
     }
 
 }

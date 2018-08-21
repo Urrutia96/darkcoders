@@ -69,10 +69,11 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">{{Auth::user()->name}}</a>
+                        <a href="{{ route('home') }}">{{Auth::user()->name}}</a>
+                        <a href="{{ route('logout') }}">Logout</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('registro') }}">Register</a>
                     @endauth
                 </div>
             @endif
@@ -82,13 +83,20 @@
                     Laravel
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <hr>
+                <form action="{{ route('cashier') }}" method="POST">
+                    {{ csrf_field() }}
+                    <script
+                      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                      data-key="{{ config('services.stripe.key')}}"
+                      data-amount="3300"
+                      data-name="darkcoders"
+                      data-description="Suscripcion mensual"
+                      data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                      data-locale="PE"
+                      >
+                    </script>
+                </form>
             </div>
         </div>
     </body>
