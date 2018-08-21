@@ -24,7 +24,7 @@ body{
 	font-family: fIndie;
 
 }
-h1,h2,h3{
+h1,h2,h3,h4,h5{
 	font-family: fOswald;
 }
 .card{
@@ -42,6 +42,9 @@ div #banner{
     background-size: 100%;
     border-radius: 1em;
 }
+/*
+ *Para logo SVG
+*/
 .brand-logo{
   height: 100%;
 
@@ -51,4 +54,24 @@ div #banner{
       height: 100%;
       padding: 10px;
     }
+}
+.tarj-precio{
+    margin-top: 0; 
+}
+.pos-inl{
+    display: inline;
+}
+.sim-dolar{
+    position: relative;
+    top: -40px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Oswald;
+    font-size: 2em; 
+    font-weight: bold;
+}
+hr{ 
+    height: 10px;
+  width: 50%;
+  background-color: red;
 }

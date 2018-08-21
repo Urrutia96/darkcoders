@@ -70,7 +70,7 @@
 
     </div>
   </div>
-
+ 
 
   <div class="container">
     <div class="section">
@@ -88,7 +88,7 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center cyan-text text-lighten-4darken-4"><i class="material-icons">group</i></h2>
+            <h2 class="center cyan-text text-darken-4"><i class="material-icons">group</i></h2>
             <h5 class="center">User Experience Focused</h5>
 
             <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
@@ -114,30 +114,69 @@
                 <h1 class="orange-text lighten-5 center">Precios</h1>
             </div>
             <div class="col s12 m4">
-                <div class="card cyan lighten-5">
-                    <div class="card-content black-text">
-                        <span class="card-title center">Mensual</span>
-                        <p> $15</p>
-                    </div>
+                <div class="card-panel cyan lighten-5 hoverable">
+                  <div class="row">
+                  <div class="col s12">
+                    <h5 class="cyan-text center">MENSUAL</h2>
+                  </div>
+                  <!--Precios-->
+                  <div class="col s12 center">
+                     <p class="grey-text pos-inl sim-dolar  ">$</p>
+                     <h1 class="orange-text accent-3-text tarj-precio pos-inl">15</h1>
+                  </div>
+                  <!--info-->
+                  <div class="col s12">
+                    <p class="center">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
+                    </p>
+                  </div>
+                  </div>
+                  <a class="btn-floating waves-effect waves-light btn-large right"><i class="material-icons">add</i></a>
                 </div>
             </div>
             <div class="col s12 m4">
-                <div class="card cyan lighten-5">
-                    <div class="card-content black-text">
-                        <span class="card-title center">Trimestral</span>
-                        <p> $30</p>
-                    </div>
+            <div class="card-panel cyan lighten-5 hoverable">
+                  <div class="row">
+                  <div class="col s12">
+                    <h5 class="cyan-text center">TRIMESTRAL</h2>
+                  </div>
+                  <!--Precios-->
+                  <div class="col s12 center">
+                     <p class="grey-text pos-inl sim-dolar  ">$</p>
+                     <h1 class="orange-text accent-3-text tarj-precio pos-inl">30</h1>
+                  </div>
+                  <!--info-->
+                  <div class="col s12">
+                    <p class="center">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
+                    </p>
+                  </div>
+                  </div>
+                  <a class="btn-floating waves-effect waves-light btn-large right"><i class="material-icons">add</i></a>
                 </div>
+                
             </div>
             <div class="col s12 m4">
-                <div class="card cyan lighten-5">
-                   <div class="card-content black-text">
-                       <span class="card-title center">año</span>
-                       <p>  $90</p>
-                           
-                      
-                   </div> 
+            <div class="card-panel cyan lighten-5 hoverable">
+                <div class="row">
+                  <div class="col s12">
+                    <h5 class="cyan-text center">ANUAL</h2>
+                  </div>
+                  <!--Precios-->
+                  <div class="col s12 center">
+                     <p class="grey-text pos-inl sim-dolar  ">$</p>
+                     <h1 class="orange-text accent-3-text tarj-precio pos-inl">90</h1>
+                  </div>
+                  <!--info-->
+                  <div class="col s12">
+                    <p class="center">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
+                    </p>
+                  </div>
+                  </div>
+                  <a class="btn-floating waves-effect waves-light btn-large right"><i class="material-icons">add</i></a>
                 </div>
+                
             </div>
         </div>
     </div>
