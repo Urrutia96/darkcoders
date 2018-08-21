@@ -17,23 +17,49 @@
 </head>
 <body>
   <nav class="cyan darken-4" role="navigation">
-    <div class="nav-wrap    per container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-        <li><a href="">navbar link</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">
+        <!--añado una imagen svg-->
+          <img style="max-height: 100px;" src="{{ asset('img/Logo.svg') }}" alt="Logo">
+        </a>
+      <!--icono tres lineas-->
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">Navbar Link</a></li>
+            <li><a href="">navbar link</a></li>
+            <li><a  data-target="slide-out" class="waves-effect waves-light outnav-trigger btn">User<i class="material-icons right">account_circle</i></a></li></li>
+          </ul>
     </div>
   </nav>
+       <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Navbar Link</a></li>
+        <li><a href="#">Navbar Link</a></li>
+        
+      </ul>
+      <!--info-user - faltan hacer pruebas -->
+        <ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="images/office.jpg">
+      </div>
+      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+      <a href="#name"><span class="white-text name">John Doe</span></a>
+      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  </ul>
+
+      
+  
+  
   <div class="section no-pad-bot" id="index-banner">
     <div class="container" id="banner">
       <br><br>
-      <h1 style="text-anchor: bold;" class="header center cyan-text text-darken-3">Bienvenido</h1>
+      <h1 class="header center cyan-text text-darken-3">Bienvenido</h1>
       <div class="row center">
         <h5 class="header col s12 light">Hello World11</h5>
       </div>
@@ -44,7 +70,7 @@
 
     </div>
   </div>
-
+ 
 
   <div class="container">
     <div class="section">
@@ -62,7 +88,7 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center cyan-text text-lighten-4darken-4"><i class="material-icons">group</i></h2>
+            <h2 class="center cyan-text text-darken-4"><i class="material-icons">group</i></h2>
             <h5 class="center">User Experience Focused</h5>
 
             <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
@@ -83,8 +109,79 @@
     <br><br>
 
     <div class="section">
-
+        <div class="row">
+            <div class="col s12"> 
+                <h1 class="orange-text lighten-5 center">Precios</h1>
+            </div>
+            <div class="col s12 m4">
+                <div class="card-panel cyan lighten-5 hoverable">
+                  <div class="row">
+                  <div class="col s12">
+                    <h5 class="cyan-text center">MENSUAL</h2>
+                  </div>
+                  <!--Precios-->
+                  <div class="col s12 center">
+                     <p class="grey-text pos-inl sim-dolar  ">$</p>
+                     <h1 class="orange-text accent-3-text tarj-precio pos-inl">15</h1>
+                  </div>
+                  <!--info-->
+                  <div class="col s12">
+                    <p class="center">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
+                    </p>
+                  </div>
+                  </div>
+                  <a class="btn-floating waves-effect waves-light btn-large right"><i class="material-icons">add</i></a>
+                </div>
+            </div>
+            <div class="col s12 m4">
+            <div class="card-panel cyan lighten-5 hoverable">
+                  <div class="row">
+                  <div class="col s12">
+                    <h5 class="cyan-text center">TRIMESTRAL</h2>
+                  </div>
+                  <!--Precios-->
+                  <div class="col s12 center">
+                     <p class="grey-text pos-inl sim-dolar  ">$</p>
+                     <h1 class="orange-text accent-3-text tarj-precio pos-inl">30</h1>
+                  </div>
+                  <!--info-->
+                  <div class="col s12">
+                    <p class="center">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
+                    </p>
+                  </div>
+                  </div>
+                  <a class="btn-floating waves-effect waves-light btn-large right"><i class="material-icons">add</i></a>
+                </div>
+                
+            </div>
+            <div class="col s12 m4">
+            <div class="card-panel cyan lighten-5 hoverable">
+                <div class="row">
+                  <div class="col s12">
+                    <h5 class="cyan-text center">ANUAL</h2>
+                  </div>
+                  <!--Precios-->
+                  <div class="col s12 center">
+                     <p class="grey-text pos-inl sim-dolar  ">$</p>
+                     <h1 class="orange-text accent-3-text tarj-precio pos-inl">90</h1>
+                  </div>
+                  <!--info-->
+                  <div class="col s12">
+                    <p class="center">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
+                    </p>
+                  </div>
+                  </div>
+                  <a class="btn-floating waves-effect waves-light btn-large right"><i class="material-icons">add</i></a>
+                </div>
+                
+            </div>
+        </div>
     </div>
+    <br>
+    <br>
   </div>
 <!--init footer-->
   <footer class="page-footer cyan darken-4">
@@ -128,7 +225,7 @@
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="{{ asset('js/materialize.min.js') }}"></script>
-  <script src="js/init.js"></script>
+  <script src="{{ asset('js/myScript.js') }}"></script>
 
   </body>
 </html>
