@@ -16,8 +16,9 @@
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 </head>
 <body>
-  <nav class="cyan darken-4" role="navigation">
-    <div class="nav-wrapper container">
+  <div class="navbar-fixed"><!--coloco el navbar en position estatica-->
+    <nav class="cyan darken-4" role="navigation">
+      <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo">
         <!--añado una imagen svg-->
           <img style="max-height: 100px;" src="{{ asset('img/Logo.svg') }}" alt="Logo">
@@ -29,8 +30,9 @@
             <li><a href="">navbar link</a></li>
             <li><a  data-target="slide-out" class="waves-effect waves-light outnav-trigger btn">User<i class="material-icons right">account_circle</i></a></li></li>
           </ul>
-    </div>
-  </nav>
+      </div>
+    </nav>
+  </div><!--finaliza el navbar en position estatica-->
        <ul class="sidenav" id="mobile-demo">
         <li><a href="#">Navbar Link</a></li>
         <li><a href="#">Navbar Link</a></li>
@@ -38,20 +40,22 @@
       </ul>
       <!--info-user - faltan hacer pruebas -->
         <ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="images/office.jpg">
-      </div>
-      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-  </ul>
+           <li>
+             <div class="user-view">
+                <div class="background">
+                  <img src="images/office.jpg">
+                </div>
+                <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+                <a href="#name"><span class="white-text name">John Doe</span></a>
+                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+             </div>
+           </li>
+           <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+           <li><a href="#!">Second Link</a></li>
+           <li><div class="divider"></div></li>
+           <li><a class="subheader">Subheader</a></li>
+           <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+         </ul>
 
       
   
@@ -114,67 +118,69 @@
                 <h1 class="orange-text lighten-5 center">Precios</h1>
             </div>
             <div class="col s12 m4">
-                <div class="card-panel cyan lighten-5 hoverable">
+                <div class="card-panel cyan lighten-5 center hoverable">
                   <div class="row">
                   <div class="col s12">
-                    <h5 class="cyan-text center">MENSUAL</h2>
+                    <h5 class="cyan-text">MENSUAL</h2>
                   </div>
                   <!--Precios-->
-                  <div class="col s12 center">
+                  <div class="col s12">
                      <p class="grey-text pos-inl sim-dolar  ">$</p>
                      <h1 class="orange-text accent-3-text tarj-precio pos-inl">15</h1>
                   </div>
                   <!--info-->
                   <div class="col s12">
-                    <p class="center">
+                    <p class="">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
-                    </p>
+                  </p>
+                  <a class="waves-effect waves-light btn-large pad-boton">start</a>    
                   </div>
                   </div>
-                  <a class="btn-floating waves-effect waves-light btn-large right"><i class="material-icons">add</i></a>
+                  
+                  
                 </div>
             </div>
             <div class="col s12 m4">
-            <div class="card-panel cyan lighten-5 hoverable">
+            <div class="card-panel cyan lighten-5 center hoverable">
                   <div class="row">
                   <div class="col s12">
-                    <h5 class="cyan-text center">TRIMESTRAL</h2>
+                    <h5 class="cyan-text">TRIMESTRAL</h2>
                   </div>
                   <!--Precios-->
-                  <div class="col s12 center">
+                  <div class="col s12">
                      <p class="grey-text pos-inl sim-dolar  ">$</p>
                      <h1 class="orange-text accent-3-text tarj-precio pos-inl">30</h1>
                   </div>
                   <!--info-->
                   <div class="col s12">
-                    <p class="center">
+                    <p class="">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
                     </p>
                   </div>
+                  <a class="waves-effect waves-light btn-large pad-boton">start</a> 
                   </div>
-                  <a class="btn-floating waves-effect waves-light btn-large right"><i class="material-icons">add</i></a>
                 </div>
                 
             </div>
             <div class="col s12 m4">
-            <div class="card-panel cyan lighten-5 hoverable">
+            <div class="card-panel cyan lighten-5 center hoverable">
                 <div class="row">
                   <div class="col s12">
-                    <h5 class="cyan-text center">ANUAL</h2>
+                    <h5 class="cyan-text">ANUAL</h2>
                   </div>
                   <!--Precios-->
-                  <div class="col s12 center">
+                  <div class="col s12">
                      <p class="grey-text pos-inl sim-dolar  ">$</p>
                      <h1 class="orange-text accent-3-text tarj-precio pos-inl">90</h1>
                   </div>
                   <!--info-->
                   <div class="col s12">
-                    <p class="center">
+                    <p class="">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
                     </p>
                   </div>
+                  <a class="waves-effect waves-light btn-large pad-boton">start</a> 
                   </div>
-                  <a class="btn-floating waves-effect waves-light btn-large right"><i class="material-icons">add</i></a>
                 </div>
                 
             </div>
