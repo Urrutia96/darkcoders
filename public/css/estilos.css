@@ -55,13 +55,19 @@ div #banner{
       padding: 10px;
     }
 }
-.tarj-precio{
+.tarjeta-precios{
+        width: auto;
+        height: 21em;
+        padding: 0.25em;   
+        border-radius: 0.50em; 
+}
+.tarjeta-precios .tarj-precio{
     margin-top: 0; 
 }
-.pos-inl{
+.tarjeta-precios .pos-inl{
     display: inline;
 }
-.sim-dolar{
+.tarjeta-precios .sim-dolar{
     position: relative;
     top: -40px;
     margin-top: 0;
@@ -70,12 +76,11 @@ div #banner{
     font-size: 2em; 
     font-weight: bold;
 }
-hr{ 
-    height: 10px;
-  width: 50%;
-  background-color: red;
-}
-.pad-boton{
+.tarjeta-precios .pad-boton{
     position: relative;
-    bottom: -5em;
+    top:;
+};
+.pos-absoluta{
+    position: relative;
+    bottom: -10%;
 }

@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 </head>
 <body>
-  <div class="navbar-fixed"><!--coloco el navbar en position estatica-->
-    <nav class="cyan darken-4" role="navigation">
+    <div class="navbar-fixed"><!--coloco el navbar en position estatica-->
+            <nav class="cyan darken-4" role="navigation">
       <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo">
         <!--añado una imagen svg-->
@@ -28,15 +28,14 @@
           <ul class="right hide-on-med-and-down">
             <li><a href="#">Navbar Link</a></li>
             <li><a href="">navbar link</a></li>
-            <li><a  data-target="slide-out" class="waves-effect waves-light outnav-trigger btn">User<i class="material-icons right">account_circle</i></a></li></li>
+            <li><a  data-target="slide-out" class="waves-effect waves-light btn">User<i class="material-icons right">account_circle</i></a></li></li>
           </ul>
       </div>
-    </nav>
-  </div><!--finaliza el navbar en position estatica-->
+             </nav>
+    </div><!--finaliza el navbar en position estatica-->
        <ul class="sidenav" id="mobile-demo">
         <li><a href="#">Navbar Link</a></li>
         <li><a href="#">Navbar Link</a></li>
-        
       </ul>
       <!--info-user - faltan hacer pruebas -->
         <ul id="slide-out" class="sidenav">
@@ -111,81 +110,91 @@
 
     </div>
     <br><br>
-
+    <!--seccion de precios-->
     <div class="section">
+        <!--creo una fila-->
         <div class="row">
-            <div class="col s12"> 
-                <h1 class="orange-text lighten-5 center">Precios</h1>
+            <div class="col s12"><!--creo un espacio 12 grid-->
+                <h1 class="orange-text lighten-5-text center">Precios</h1>
             </div>
+        </div><!--finaliza la fila-->
+        <div class="row">
+            <!--1° tarje-precio-->
             <div class="col s12 m4">
-                <div class="card-panel cyan lighten-5 center hoverable">
-                  <div class="row">
-                  <div class="col s12">
-                    <h5 class="cyan-text">MENSUAL</h2>
-                  </div>
-                  <!--Precios-->
-                  <div class="col s12">
-                     <p class="grey-text pos-inl sim-dolar  ">$</p>
-                     <h1 class="orange-text accent-3-text tarj-precio pos-inl">15</h1>
-                  </div>
-                  <!--info-->
-                  <div class="col s12">
-                    <p class="">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
-                  </p>
-                  <a class="waves-effect waves-light btn-large pad-boton">start</a>    
-                  </div>
-                  </div>
-                  
-                  
-                </div>
+                <div class="tarjeta-precios cyan lighten-5 hoverable center"><!--inicializo 1° tarjeta-precios-->
+                    <div class="row"><!--espacio para encabezado-->
+                        <div class="col s12">
+                            <h5 class="cyan-text">Mensual</h5>
+                        </div>
+                    </div>    
+                    <div class="row"><!--espacio datos-->
+                        <div class="col s12"><!--contenido de precios-->
+                            <p class="grey-text pos-inl sim-dolar">$</p>
+                            <h1 class="orange-text accent-3 tarje-precio pos-inl">15</h1>
+                                <div class="card-content justify">
+                                    <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
+                                    </p>
+                                </div>
+                                <div class="pad-boton">
+                                    <a class="waves-effect waves-light btn-large" >Start</a>
+                                </div>
+                        </div>                            
+                    </div>    
+                </div><!--tarjeta-precios-->
             </div>
+            <!--2° tarje-precio-->
             <div class="col s12 m4">
-            <div class="card-panel cyan lighten-5 center hoverable">
-                  <div class="row">
-                  <div class="col s12">
-                    <h5 class="cyan-text">TRIMESTRAL</h2>
-                  </div>
-                  <!--Precios-->
-                  <div class="col s12">
-                     <p class="grey-text pos-inl sim-dolar  ">$</p>
-                     <h1 class="orange-text accent-3-text tarj-precio pos-inl">30</h1>
-                  </div>
-                  <!--info-->
-                  <div class="col s12">
-                    <p class="">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
-                    </p>
-                  </div>
-                  <a class="waves-effect waves-light btn-large pad-boton">start</a> 
-                  </div>
-                </div>
-                
+               
+                <div class="tarjeta-precios cyan lighten-5 hoverable center"><!--inicializo 1° tarjeta-precios-->
+                    <div class="row"><!--espacio para encabezado-->
+                        <div class="col s12">
+                            <h5 class="cyan-text">TRIMESTRAL</h5>
+                        </div>
+                    </div>    
+                    <div class="row"><!--espacio datos-->
+                        <div class="col s12"><!--contenido de precios-->
+                            <p class="grey-text pos-inl sim-dolar">$</p>
+                            <h1 class="orange-text accent-3 tarje-precio pos-inl">30</h1>
+                                <div class="card-content justify">
+                                    <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
+                                    </p>
+                                </div>
+                                <div class="pad-boton">
+                                    <a class="waves-effect waves-light btn-large" >Start</a>
+                                </div>
+                        </div>                            
+                    </div>    
+                </div><!--tarjeta-precios-->
             </div>
+            <!--3° tarje-precio-->
             <div class="col s12 m4">
-            <div class="card-panel cyan lighten-5 center hoverable">
-                <div class="row">
-                  <div class="col s12">
-                    <h5 class="cyan-text">ANUAL</h2>
-                  </div>
-                  <!--Precios-->
-                  <div class="col s12">
-                     <p class="grey-text pos-inl sim-dolar  ">$</p>
-                     <h1 class="orange-text accent-3-text tarj-precio pos-inl">90</h1>
-                  </div>
-                  <!--info-->
-                  <div class="col s12">
-                    <p class="">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
-                    </p>
-                  </div>
-                  <a class="waves-effect waves-light btn-large pad-boton">start</a> 
-                  </div>
-                </div>
-                
+               
+                <div class="tarjeta-precios cyan lighten-5 hoverable center"><!--inicializo 1° tarjeta-precios-->
+                    <div class="row"><!--espacio para encabezado-->
+                        <div class="col s12">
+                            <h5 class="cyan-text">ANUAL</h5>
+                        </div>
+                    </div>    
+                    <div class="row"><!--espacio datos-->
+                        <div class="col s12"><!--contenido de precios-->
+                            <p class="grey-text pos-inl sim-dolar">$</p>
+                            <h1 class="orange-text accent-3 tarje-precio pos-inl">90</h1>
+                                <div class="card-content justify">
+                                    <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
+                                    </p>
+                                </div>
+                                <div class="pad-boton">
+                                    <a class="waves-effect waves-light btn-large" >Start</a>
+                                </div>
+                        </div>                            
+                    </div>    
+                </div><!--tarjeta-precios-->
             </div>
         </div>
-    </div>
+    </div><!-- fin seccion de precios-->
     <br>
     <br>
   </div>
