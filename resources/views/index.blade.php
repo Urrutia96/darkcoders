@@ -12,8 +12,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/materialize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/materialize.css') }}">
+ 
 </head>
 <body>
     <div class="navbar-fixed"><!--coloco el navbar en position estatica-->
@@ -28,7 +29,7 @@
           <ul class="right hide-on-med-and-down">
             <li><a href="#">Navbar Link</a></li>
             <li><a href="">navbar link</a></li>
-            <li><a  data-target="slide-out" class="waves-effect waves-light btn">User<i class="material-icons right">account_circle</i></a></li></li>
+            <li><a  data-target="slide-out" class="waves-effect waves-light sidenav-trigger show-on-large">User<i class="material-icons right">account_circle</i></a></li></li>
           </ul>
       </div>
              </nav>
@@ -42,12 +43,19 @@
            <li>
              <div class="user-view">
                 <div class="background">
-                  <img src="images/office.jpg">
+                  <img src="{{ asset('img/windows-broken.jpg')  }}">
                 </div>
-                <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-                <a href="#name"><span class="white-text name">John Doe</span></a>
-                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-             </div>
+                <a href="#user"><img class="circle" src="{{ asset('img/Pinguinos.jpg')  }}"></a>
+                @if (Route::has('login'))
+                    @auth
+                        <a href="#name"><span class="white-text name">{{Auth::user()->name}}</span></a>
+                        <a href="#email"><span class="white-text email">{{Auth::user()->email}}</span></a>
+                    @else
+                        <a href="#name"><span class="white-text name">Unknow</span></a>
+                        <a href="#email"><span class="white-text email">mail@mail.com</span></a>
+                    @endauth
+            </div>
+                @endif
            </li>
            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
            <li><a href="#!">Second Link</a></li>
@@ -120,7 +128,7 @@
         </div><!--finaliza la fila-->
         <div class="row">
             <!--1° tarje-precio-->
-            <div class="col s12 m4">
+            <div class="col s12 m4 l4">
                 <div class="tarjeta-precios cyan lighten-5 hoverable center"><!--inicializo 1° tarjeta-precios-->
                     <div class="row"><!--espacio para encabezado-->
                         <div class="col s12">
@@ -131,9 +139,9 @@
                         <div class="col s12"><!--contenido de precios-->
                             <p class="grey-text pos-inl sim-dolar">$</p>
                             <h1 class="orange-text accent-3 tarje-precio pos-inl">15</h1>
-                                <div class="card-content justify">
+                                <div class="text-black justify">
                                     <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
+                                        HOLA
                                     </p>
                                 </div>
                                 <div class="pad-boton">
@@ -144,7 +152,7 @@
                 </div><!--tarjeta-precios-->
             </div>
             <!--2° tarje-precio-->
-            <div class="col s12 m4">
+            <div class="col s12 m4 l4">
                
                 <div class="tarjeta-precios cyan lighten-5 hoverable center"><!--inicializo 1° tarjeta-precios-->
                     <div class="row"><!--espacio para encabezado-->
@@ -169,7 +177,7 @@
                 </div><!--tarjeta-precios-->
             </div>
             <!--3° tarje-precio-->
-            <div class="col s12 m4">
+            <div class="col s12 m4 l4">
                
                 <div class="tarjeta-precios cyan lighten-5 hoverable center"><!--inicializo 1° tarjeta-precios-->
                     <div class="row"><!--espacio para encabezado-->

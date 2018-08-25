@@ -7665,8 +7665,8 @@ input[type=range]::-ms-thumb {
 }
 
 .sidenav .user-view .circle {
-  height: 64px;
-  width: 64px;
+  height: 80px;
+  width: 80px;
 }
 
 .sidenav .user-view .name,

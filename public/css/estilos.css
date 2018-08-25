@@ -20,6 +20,20 @@
 	font-family: fOswald;
 	src:url(../fonts/Oswald/Oswald-Bold.ttf);
 }
+/*
+  *para que funcione los en pantalla completa el sidenav
+  *requiere estas funciones
+  */
+header, main, footer {
+      padding-left: 300px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
+    }
+    /*finaliza los requerimientos*/
 body{
 	font-family: fIndie;
 
@@ -57,9 +71,10 @@ div #banner{
 }
 .tarjeta-precios{
         width: auto;
-        height: 21em;
-        padding: 0.25em;   
+        height: 80%;
+        padding: 0.50em;   
         border-radius: 0.50em; 
+        margin: 0 0 2em 0;
 }
 .tarjeta-precios .tarj-precio{
     margin-top: 0; 
@@ -78,9 +93,14 @@ div #banner{
 }
 .tarjeta-precios .pad-boton{
     position: relative;
-    top:;
+    bottom: -2.5em;
 };
-.pos-absoluta{
-    position: relative;
-    bottom: -10%;
+
+.tarjeta-precios p{
+    font-size: 1em;
+    margin-bottom: 0;
 }
+.sidenav .user-view .background img{
+    width: 100%;
+    
+};
