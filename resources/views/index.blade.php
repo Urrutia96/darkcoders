@@ -8,10 +8,10 @@
       <br><br>
       <h1 class="header center cyan-text text-darken-3">Bienvenido</h1>
       <div class="row center">
-        <h5 class="header col s12 light">Hello World11</h5>
+        <h5 class="header col s12 light">Laravel, Vue, HTML5</h5>
       </div>
       <div class="row center">
-        <a href="#" id="download-button" class="btn-large waves-effect waves-light orange accent-3">Empezemos</a>
+        <a href="#" id="download-button" class="btn-large waves-effect waves-light orange accent-3">Empezamos?</a>
       </div>
       <br><br>
 
