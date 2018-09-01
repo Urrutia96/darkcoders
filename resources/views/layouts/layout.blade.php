@@ -27,17 +27,26 @@
 			<!--icono tres lineas-->
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 					<ul class="right hide-on-med-and-down">
-						<li><a href="#">Navbar Link</a></li>
-						<li><a href="">navbar link</a></li>
-						<li><a  data-target="slide-out" class="waves-effect waves-light sidenav-trigger show-on-large">User<i class="material-icons right">account_circle</i></a></li></li>
+						<li><a href="#">Cursos</a></li>
+						<li><a href="">Blog</a></li>
+						@if( Auth::check() && !Auth::user()->subscribed() )
+							<li><a href="">Precio</a></li>
+						@endif
+						<li>
+							@auth
+								<a  data-target="slide-out" class="waves-effect waves-light sidenav-trigger show-on-large">{{ Auth::user()->name }}<i class="material-icons right">account_circle</i></a>
+							@else
+								<a  data-target="slide-out" class="waves-effect waves-light sidenav-trigger show-on-large">Login/Register<i class="material-icons right">input</i></a>
+							@endif
+						</li>
 					</ul>
 			</div>
 		</nav>
 	</div>
 	<!--finaliza el navbar en position estatica-->
 	 <ul class="sidenav" id="mobile-demo">
-		<li><a href="#">Navbar Link</a></li>
-		<li><a href="#">Navbar Link</a></li>
+		<li><a href="#">Cursos</a></li>
+		<li><a href="#">Blog</a></li>
 	</ul>
 	<!--info-user - faltan hacer pruebas -->
 	<ul id="slide-out" class="sidenav">
