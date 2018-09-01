@@ -121,8 +121,8 @@
 	<!--  Scripts-->
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="{{ asset('js/materialize.min.js') }}"></script>
-	@yield('scripts')
 	<script src="{{ asset('js/myScript.js') }}"></script>
+	@yield('scripts')
 	</body>
 </html>
 										
