@@ -15,12 +15,13 @@
 								{{ csrf_field() }}
 								<div class="row">
 									<div class="input-field col s12">
+											<label for="card-numero">
+													N&uacute;mero de Tajeta
+											</label>
+											<div id="card-numero"></div>
+											
 											<!-- Used to display Element errors. -->
 											<div id="card-errors" role="alert"></div>
-											<div id="card-numero"></div>
-											<label for="card-numero">
-												N&uacute;mero de Tajeta
-											</label>
 											
 									</div>
 								</div>
