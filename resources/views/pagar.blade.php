@@ -52,4 +52,5 @@
 
 @section('scripts')
 	<script src="https://js.stripe.com/v3/"></script><!--add libreria Stripe-->
+	<script src="{{ asset('js/customStripe.js') }}"></script>
 @endsection
