@@ -27,7 +27,7 @@
 									<div class="input-field col s6">
 											<div id="card-exp"></div>
 									</div>
-									<div class="input-fied col s6">
+									<div class="input-field col s6">
 											<div id="card-cvc" ></div>
 									</div>
 								</div>
