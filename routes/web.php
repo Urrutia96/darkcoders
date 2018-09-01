@@ -22,6 +22,7 @@ Route::post('registro','Users\UsersController@store')->name('registro.store');
 Route::post('cashier','Users\PaymentsController@threeMonths')->name('cashier')->middleware('auth');
 //Prueba de vista de HOME
 Route::get('index', 'Users\UsersController@index')->name('home');
+Route::get('pagar', 'Users\UsersController@pagar');
 
 
 //Rutas para admin/dashboard

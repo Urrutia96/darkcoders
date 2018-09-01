@@ -70,6 +70,13 @@ class UsersController extends Controller
     public function showLoginForm(){
         return view('login');
     }
+    /**
+     *Pagar pasarela Stripe
+     */
+     public function pagar(){
+         return view('pagar');
+     }
+        
 
     /**
      * inicio de session
