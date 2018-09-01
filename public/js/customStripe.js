@@ -2,7 +2,7 @@
 /**
  * Montar formulario de stripe 
  */
-var stripe = Stripe('pk_test_eMjgdJgyyaZ8bYuhhyGqwusy');
+var stripe = Stripe('pk_test_3edeNOdFS1hDivtTiMIanqQr');
 var elements = stripe.elements();
 
 var style = {
@@ -41,7 +41,7 @@ form.addEventListener('submit', function(event) {
       errorElement.textContent = result.error.message;
     } else {
       // Send the token to your server.
-      stripeTokenHandler(result.token);
+      stripeTokenHandler(result.token);console.log(result);
     }
   });
 });

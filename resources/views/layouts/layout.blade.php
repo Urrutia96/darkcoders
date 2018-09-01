@@ -29,7 +29,7 @@
 					<ul class="right hide-on-med-and-down">
 						<li><a href="#">Cursos</a></li>
 						<li><a href="">Blog</a></li>
-						@if( Auth::check() && !Auth::user()->subscribed() )
+						@if( !Auth::user()->subscriptions() )
 							<li><a href="">Precio</a></li>
 						@endif
 						<li>
