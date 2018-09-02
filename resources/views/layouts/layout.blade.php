@@ -29,9 +29,11 @@
 					<ul class="right hide-on-med-and-down">
 						<li><a href="#">Cursos</a></li>
 						<li><a href="">Blog</a></li>
-						@if( Auth::check() && Auth::user()->subscriptions )
+						@auth
+							@if(!Auth::user()->subscriptions)
 							<li><a href="">Precio</a></li>
-						@endif
+							@endif
+						@endauth
 						<li>
 							@auth
 								<a  data-target="slide-out" class="waves-effect waves-light sidenav-trigger show-on-large">{{ Auth::user()->name }}<i class="material-icons right">account_circle</i></a>

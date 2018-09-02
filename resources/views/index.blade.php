@@ -5,7 +5,7 @@
 @section('content')  
 {{session('mensaje')}}
 
-<?php echo Auth::user()->subscriptions?'esta vacio':'tiene algo';?>
+<?php echo Auth::user()->subscriptions?'esta suscrito':'no esta suscripto';?>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container" id="banner">
       <br><br>

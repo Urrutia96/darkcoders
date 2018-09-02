@@ -19,7 +19,7 @@ Route::get('logout','Users\UsersController@logout')->name('logout')->middleware(
 Route::get('registro','Users\UsersController@showRegistroForm')->name('registro');
 Route::post('registrovalidate','Users\UsersController@validateRegistro'); //Verificar validacion de formulario de registro desde Vue-Axiosjs
 Route::post('registro','Users\UsersController@store')->name('registro.store');
-Route::post('cashier','Users\PaymentsController@threeMonths')->name('cashier')->middleware('auth');
+Route::post('cashier','Users\PaymentsController@store')->name('cashier')->middleware('auth');
 //Prueba de vista de HOME
 Route::get('index', 'Users\UsersController@index');
 Route::get('suscripcion', 'Users\UsersController@suscripcion')->name('suscripcion')->middleware('auth');
