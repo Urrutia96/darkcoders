@@ -4,6 +4,7 @@
 
 @section('content')
 <div class="container">
+	
 	<section>
 		<div class="section">
 			<article>
@@ -14,7 +15,7 @@
 							<form class="col s12" action="{{ route('cashier') }}" method="post" id="payment-form">
 								{{ csrf_field() }}
 								<div class="input-field col s12">
-								   <select>
+								   <select name="plan">
 								     <option value="" disabled selected>Choose your option</option>
 								     <option value="1">Mensual -- S/.33.00</option>
 								     <option value="2">3 Meses -- S/.90.00</option>

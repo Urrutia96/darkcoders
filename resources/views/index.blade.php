@@ -3,6 +3,9 @@
 @section('title', 'inicio')
   
 @section('content')  
+{{session('mensaje')}}
+
+<?php echo Auth::user()->subscriptions?'esta vacio':'tiene algo';?>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container" id="banner">
       <br><br>

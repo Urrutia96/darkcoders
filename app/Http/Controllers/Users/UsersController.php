@@ -70,11 +70,18 @@ class UsersController extends Controller
     public function showLoginForm(){
         return view('login');
     }
+
     /**
      *Pagar pasarela Stripe
+     *
+     *
      */
-     public function pagar(){
-         return view('pagar');
+     public function suscripcion(){
+        if(Auth::user()->subscriptions){
+            return view('pagar');
+        }else{
+            return redirect()->route('home')->with('mensaje','Ya estas suscrito, enjoy!');
+        }
      }
         
 
@@ -112,4 +119,17 @@ class UsersController extends Controller
         return redirect()->route('home');
     }
 
+    /**
+     *  Muestra de agradecimiento al suscribirse
+     *
+     *
+     */
+    public function thanks(){
+        $user = User::findOrFail(Auth::user()->id);
+        
+        if($user->subscriptions)
+            return redirect()->route('suscripcion')->with('mensaje','Aun no te has suscrito');
+
+        return view('thanks');
+    }
 }

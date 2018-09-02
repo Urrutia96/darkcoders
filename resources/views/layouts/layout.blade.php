@@ -29,14 +29,14 @@
 					<ul class="right hide-on-med-and-down">
 						<li><a href="#">Cursos</a></li>
 						<li><a href="">Blog</a></li>
-						@if( !Auth::user()->subscriptions() )
+						@if( Auth::check() && Auth::user()->subscriptions )
 							<li><a href="">Precio</a></li>
 						@endif
 						<li>
 							@auth
 								<a  data-target="slide-out" class="waves-effect waves-light sidenav-trigger show-on-large">{{ Auth::user()->name }}<i class="material-icons right">account_circle</i></a>
 							@else
-								<a  data-target="slide-out" class="waves-effect waves-light sidenav-trigger show-on-large">Login/Register<i class="material-icons right">input</i></a>
+								<a href="{{ route('login') }}" class="waves-effect waves-light sidenav-trigger show-on-large">Login/Register<i class="material-icons right">input</i></a>
 							@endif
 						</li>
 					</ul>
@@ -116,7 +116,6 @@
 		</div>
 	</footer>
 	<!--Finish Footer-->
-
 
 	<!--  Scripts-->
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
