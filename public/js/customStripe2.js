@@ -1,0 +1,71 @@
+var stripe = Stripe('pk_test_3edeNOdFS1hDivtTiMIanqQr');
+var elements= stripe.elements();
+var card = elements.create('card', {
+    iconStyle: 'solid',
+    style:{
+        base:{
+            iconColor: '#8898AA',
+            lineHeight: '36px',
+            fontWeight: 300,
+            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+            fontSize: '19px',
+        '::placeholder':{
+            color: '#8898AA',
+        },
+    },
+    invalid: {
+        iconColor: '#e85746',
+        color: '#e85746',
+         }
+    },
+    classes:{
+        focus: 'is-focused',
+        empty: 'is-empty',
+    },
+});
+card.mount('#card-element');
+//creamos funcion para cambiar propiedades y aplicar reglas
+var inputs = document.querySelectorAll('input.field');
+Array.prototype.forEach.call(inputs, function(input){
+    input.addEventListener('focus', function(){
+        input.classList.add('is-focused');
+    });
+    input.addEventListener('blur', function(){
+        input.classList.remove('is-focused');
+    });
+    input.addEventListener('keyup', function(){
+        if(input.value.lenght === 0){
+            input.classList.add('is-empty');
+        }else{
+            input.classList.remove('is-empty');
+        }
+    });
+});
+
+/**
+ * salidas en pantalla
+ */
+function setOutCome(result){
+    var successElement = document.querySelector('.success');
+    var errorElement= document.querySelector('.error');
+    successElement.classList.remove('visible');
+    errorElement.classList.remove('visible');
+    if(result.token){
+        successElement.querySelector('.token').textContent  = result.token.id;
+        successElement.classList.add('visible');
+    }else if(result.error){
+        errorElement.textContent = result.error.message;
+        errorElement.classList.add('visible');
+    }   
+}
+card.on('change',function(event){
+    setOutCome(event);
+});
+document.querySelector('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = document.querySelector('form');
+    var extraDetails = {
+        name: form.querySelector('input[name=cardholder-name]').value,
+    };
+    stripe.createToken(card, extraDetails).then(setOutCome);
+});

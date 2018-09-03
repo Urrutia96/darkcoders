@@ -104,18 +104,3 @@ div #banner{
     width: 100%;
     
 };
-/*estilos para seccion de pagos*/
-
-  
-  .StripeElement--focus {
-    box-shadow: 0 1px 4px 0 #cfd7df;
-  }
-  
-  .StripeElement--invalid {
-    border-color: #fa755a;
-  }
-  
-  .StripeElement--webkit-autofill {
-    background-color: #fefde5 !important;
-  }
-  

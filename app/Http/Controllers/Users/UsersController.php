@@ -83,7 +83,12 @@ class UsersController extends Controller
             return redirect()->route('home')->with('mensaje','Ya estas suscrito, enjoy!');
         }
      }
-        
+    /*
+     *Prueba de vista 
+     */
+     public function pagar(){
+         return view('suscripcion');
+     }   
 
     /**
      * inicio de session
