@@ -4,8 +4,9 @@
   
 @section('content')  
 {{session('mensaje')}}
-
-<?php echo Auth::user()->subscriptions?'esta suscrito':'no esta suscripto';?>
+@auth
+    {{Auth::user()->tipoSuscripcion()}}    
+@endauth
   <div class="section no-pad-bot" id="index-banner">
     <div class="container" id="banner">
       <br><br>
@@ -76,15 +77,15 @@
                     </div>    
                     <div class="row"><!--espacio datos-->
                         <div class="col s12"><!--contenido de precios-->
-                            <p class="grey-text pos-inl sim-dolar">$</p>
-                            <h1 class="orange-text accent-3 tarje-precio pos-inl">15</h1>
+                            <p class="grey-text pos-inl sim-dolar">S/.</p>
+                            <h1 class="orange-text accent-3 tarje-precio pos-inl">33.00</h1>
                                 <div class="text-black justify">
-                                    <p>
-                                        HOLA
+                                    <p style="font-size: 16px; padding-left: 20px; padding-right: 20px">
+                                        Aun no estas convencido? prueba la opcion mensual y decide.
                                     </p>
                                 </div>
                                 <div class="pad-boton">
-                                    <a class="waves-effect waves-light btn-large" >Start</a>
+                                    <a class="waves-effect waves-light btn-large" href="{{route('suscripcion')}}?plan=1">Start</a>
                                 </div>
                         </div>                            
                     </div>    
@@ -96,20 +97,20 @@
                 <div class="tarjeta-precios cyan lighten-5 hoverable center"><!--inicializo 1° tarjeta-precios-->
                     <div class="row"><!--espacio para encabezado-->
                         <div class="col s12">
-                            <h5 class="cyan-text">TRIMESTRAL</h5>
+                            <h5 class="cyan-text">3 Meses</h5>
                         </div>
                     </div>    
                     <div class="row"><!--espacio datos-->
                         <div class="col s12"><!--contenido de precios-->
-                            <p class="grey-text pos-inl sim-dolar">$</p>
-                            <h1 class="orange-text accent-3 tarje-precio pos-inl">30</h1>
+                            <p class="grey-text pos-inl sim-dolar">S/.</p>
+                            <h1 class="orange-text accent-3 tarje-precio pos-inl">90.00</h1>
                                 <div class="card-content justify">
-                                    <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
+                                    <p style="font-size: 16px; padding-left: 20px; padding-right: 20px">
+                                        Aun no estas convencido? prueba la opcion mensual y decide.
                                     </p>
                                 </div>
                                 <div class="pad-boton">
-                                    <a class="waves-effect waves-light btn-large" >Start</a>
+                                    <a class="waves-effect waves-light btn-large" href="{{route('suscripcion')}}?plan=2">Start</a>
                                 </div>
                         </div>                            
                     </div>    
@@ -121,20 +122,20 @@
                 <div class="tarjeta-precios cyan lighten-5 hoverable center"><!--inicializo 1° tarjeta-precios-->
                     <div class="row"><!--espacio para encabezado-->
                         <div class="col s12">
-                            <h5 class="cyan-text">ANUAL</h5>
+                            <h5 class="cyan-text">6 Meses</h5>
                         </div>
                     </div>    
                     <div class="row"><!--espacio datos-->
                         <div class="col s12"><!--contenido de precios-->
-                            <p class="grey-text pos-inl sim-dolar">$</p>
-                            <h1 class="orange-text accent-3 tarje-precio pos-inl">90</h1>
+                            <p class="grey-text pos-inl sim-dolar">S/.</p>
+                            <h1 class="orange-text accent-3 tarje-precio pos-inl">180.00</h1>
                                 <div class="card-content justify">
-                                    <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ratione illo labore odit architecto ipsum explicabo dicta omnis consectetur quaerat reiciendis eum corrupti beatae reprehenderit voluptatum, molestiae dignissimos quo error!
+                                    <p style="font-size: 16px; padding-left: 20px; padding-right: 20px">
+                                        Aun no estas convencido? prueba la opcion mensual y decide.
                                     </p>
                                 </div>
                                 <div class="pad-boton">
-                                    <a class="waves-effect waves-light btn-large" >Start</a>
+                                    <a class="waves-effect waves-light btn-large" href="{{route('suscripcion')}}?plan=3">Start</a>
                                 </div>
                         </div>                            
                     </div>    

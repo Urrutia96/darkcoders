@@ -45,7 +45,7 @@ class PaymentsController extends Controller
                 #algo por defecto
                 break;
         }
-        if($user->subscriptions)
+        if($user->suscrito())
             return redirect()->route('thanks');
         
         return redirect()->route('cashier')->with('mensaje','Ha ocurrido un error por favor intenta de nuevo o contacta al administrador');

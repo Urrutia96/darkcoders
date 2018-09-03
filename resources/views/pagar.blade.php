@@ -17,9 +17,9 @@
 								<div class="input-field col s12">
 								   <select name="plan">
 								     <option value="" disabled selected>Choose your option</option>
-								     <option value="1">Mensual -- S/.33.00</option>
-								     <option value="2">3 Meses -- S/.90.00</option>
-								     <option value="3">6 Meses -- S/.180.00</option>
+								     <option value="1" {{isset($_GET['plan']) && $_GET['plan']==1?'selected':''}}>Mensual -- S/.33.00</option>
+								     <option value="2" {{isset($_GET['plan']) && $_GET['plan']==2?'selected':''}}>3 Meses -- S/.90.00</option>
+								     <option value="3" {{isset($_GET['plan']) && $_GET['plan']==1?'selected':''}}>6 Meses -- S/.180.00</option>
 								   </select>
 								   <label>Selecciona tu plan de suscripción</label>
 								 </div>

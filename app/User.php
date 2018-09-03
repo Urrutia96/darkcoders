@@ -28,4 +28,23 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    public function suscrito(){
+        if($this->subscribed('mountly') || $this->subscribed('threeMonths') || $this->subscribed('midYear')){
+            return true;
+        }
+        return false;
+    }
+    public function tipoSuscripcion(){
+        if($this->subscribed('mountly'))
+            return 'mountly';
+        if($this->subscribed('threeMonths'))
+            return 'threeMonths';
+        if($this->subscribed('midYear'))
+            return 'midYear';
+
+        return false
+;
+    }
 }

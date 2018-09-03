@@ -30,8 +30,10 @@
 						<li><a href="#">Cursos</a></li>
 						<li><a href="">Blog</a></li>
 						@auth
-							@if(!Auth::user()->subscriptions)
-							<li><a href="">Precio</a></li>
+							@if(Auth::user()->suscrito())
+							
+							@else
+								<li><a href="">Precio</a></li>
 							@endif
 						@endauth
 						<li>

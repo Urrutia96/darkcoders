@@ -77,7 +77,7 @@ class UsersController extends Controller
      *
      */
      public function suscripcion(){
-        if(!Auth::user()->subscriptions){
+        if(!Auth::user()->suscrito()){
             return view('pagar');
         }else{
             return redirect()->route('home')->with('mensaje','Ya estas suscrito, enjoy!');
@@ -127,7 +127,7 @@ class UsersController extends Controller
     public function thanks(){
         $user = User::findOrFail(Auth::user()->id);
         
-        if($user->subscriptions)
+        if($user->suscrito())
             return view('thanks');
 
         return redirect()->route('suscripcion')->with('mensaje','Aun no te has suscrito');
