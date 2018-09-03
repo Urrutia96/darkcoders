@@ -3,7 +3,7 @@
         <v-container fill-height>
             <v-layout align-center>
                 <v-flex>
-                    <h3 class="display-3 text-xs-center">Welcome {{admin.nombre}}</h3>
+                    <h3 class="display-3 text-xs-center">Welcome {{admin.name}}</h3>
                 </v-flex>
             </v-layout>
         </v-container>

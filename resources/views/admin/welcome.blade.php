@@ -17,7 +17,7 @@
         
         <!-- Body -->
         <div id="app">
-            <dashboard :admin="{'nombre': 'Santos','email':'urrutia.osmin@gmail.com'}"></dashboard>
+            <dashboard :admin="{{Auth::user()}}"></dashboard>
         </div>
 
         <!-- Scripts -->
