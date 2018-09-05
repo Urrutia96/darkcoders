@@ -63,7 +63,7 @@
     transform-origin: 0% 50%;
     transition: transform 200ms ease-in-out;
     cursor: text;
-    padding-left: 5px;
+    padding-left: 5px; 
   }
   
   label .field.is-focused + span span,
