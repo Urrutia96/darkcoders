@@ -8,19 +8,7 @@
       	<v-layout row wrap>
       	  <v-flex xs12 sm12 md12>
 	      	<v-text-field
-	           label="Nombre"
-	           outline
-	        ></v-text-field>
-      	  </v-flex>
-      	  <v-flex xs12 sm6 md6>
-      	    <v-text-field
-	           label="Nombre"
-	           outline
-	        ></v-text-field>
-      	  </v-flex>
-      	  <v-flex xs12 sm6 md6>
-      	    <v-text-field
-	           label="Nombre"
+	           label="Nombre del Curso"
 	           outline
 	        ></v-text-field>
       	  </v-flex>
@@ -29,6 +17,11 @@
       	<vue-editor v-model="content" :editorOptions="editorOption"></vue-editor>
 
       </v-card-text>
+      <v-card-actions>
+				<v-spacer></v-spacer>
+        <v-btn color="success" large>Crear</v-btn>
+        <v-btn>text</v-btn>
+      </v-card-actions>
     </v-card>
 </template>
 
@@ -40,6 +33,7 @@ export default {
     data: function(){
         return{
         	content: '',
+
       		editorOption: {
       			modules:{
       				syntax: {

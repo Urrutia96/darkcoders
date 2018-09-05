@@ -76922,13 +76922,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -76937,6 +76930,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             content: '',
+
             editorOption: {
                 modules: {
                     syntax: {
@@ -94538,29 +94532,7 @@ var render = function() {
                 { attrs: { xs12: "", sm12: "", md12: "" } },
                 [
                   _c("v-text-field", {
-                    attrs: { label: "Nombre", outline: "" }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs12: "", sm6: "", md6: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: { label: "Nombre", outline: "" }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-flex",
-                { attrs: { xs12: "", sm6: "", md6: "" } },
-                [
-                  _c("v-text-field", {
-                    attrs: { label: "Nombre", outline: "" }
+                    attrs: { label: "Nombre del Curso", outline: "" }
                   })
                 ],
                 1
@@ -94579,6 +94551,20 @@ var render = function() {
               expression: "content"
             }
           })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-card-actions",
+        [
+          _c("v-spacer"),
+          _vm._v(" "),
+          _c("v-btn", { attrs: { color: "success", large: "" } }, [
+            _vm._v("Crear")
+          ]),
+          _vm._v(" "),
+          _c("v-btn", [_vm._v("text")])
         ],
         1
       )
