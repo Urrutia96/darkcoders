@@ -69,3 +69,32 @@ document.querySelector('form').addEventListener('submit', function(e){
     };
     stripe.createToken(card, extraDetails).then(setOutCome);
 });
+//crear elemento token
+/** 
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+  
+    stripe.createToken(cardN).then(function(result) {
+      if (result.error) {
+        // Inform the customer that there was an error.
+        var errorElement = document.getElementsByClassName('.error');
+        errorElement.textContent = result.error.message;
+      } else {
+        // Send the token to your server.
+        stripeTokenHandler(result.token);console.log(result);
+      }
+    });
+  });
+  function stripeTokenHandler(token) {
+    // Insert the token ID into the form so it gets submitted to the server
+    var form = document.getElementById('payment-form');
+    var hiddenInput = document.createElement('input');
+    hiddenInput.setAttribute('type', 'hidden');
+    hiddenInput.setAttribute('name', 'stripeToken');
+    hiddenInput.setAttribute('value', token.id);
+    form.appendChild(hiddenInput);
+  
+    // Submit the form
+    form.submit();
+  }
+*/

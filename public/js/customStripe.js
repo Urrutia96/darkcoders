@@ -31,6 +31,7 @@ cardN.addEventListener('change', function(event) {
 });
 // Create a token or display an error when the form is submitted.
 var form = document.getElementById('payment-form');
+
 form.addEventListener('submit', function(event) {
   event.preventDefault();
 

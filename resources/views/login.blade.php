@@ -19,13 +19,17 @@
 <body>
 
     <!-- Body -->
-    <header>
-        <h1 class="align center">Login</h1>
-    </header>
+   
     <div class="container">
         <section>
+            <div class="row">
+                <div class="col s12">                   
+                    <h1 class="align center">Login</h1>
+                </div>
+            </div> 
             
             <article>
+
                 <div class="row">
                     <div class="col s0 m1 l4">
                     </div>

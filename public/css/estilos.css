@@ -22,9 +22,9 @@
 }
 /*
   *para que funcione los en pantalla completa el sidenav
-  *requiere estas funciones
+  *requiere estas reglas
   */
-header, main, footer {
+header, main{
       padding-left: 300px;
     }
 
@@ -59,16 +59,7 @@ div #banner{
 /*
  *Para logo SVG
 */
-.brand-logo{
-  height: 100%;
 
-    img {
-      max-width: 200px;
-      width: 100%;
-      height: 100%;
-      padding: 10px;
-    }
-}
 .tarjeta-precios{
         width: auto;
         height: 80%;
