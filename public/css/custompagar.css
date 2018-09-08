@@ -18,3 +18,46 @@
   font-family: Oswald;
   font-size: 1em;
 }
+/*animacion imagen*/
+
+#promocion{
+  margin: 0 auto;
+  animation: rotacion 1s ease-in;
+}
+
+#promocion:hover{
+  animation: rotacion 1s ease-in;
+}
+
+@keyframes slideIn{
+  0%{
+    margin-top: 150%;
+    opacity: 0.25;
+  }
+  60%{
+    margin-top: -10%;
+    opacity: 0.5;
+  }
+  100%{
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes rotacion{
+  0%{
+    transform: rotateY(30deg);
+  }
+  25%{
+    transform: rotateY(60deg);
+  }
+  50%{
+    transform: rotateY(180deg);
+  }
+  75%{
+    transform: rotateY(60deg)
+  }
+  100%{
+    transform: rotateY(0deg);
+  }
+}

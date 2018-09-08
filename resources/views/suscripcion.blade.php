@@ -20,20 +20,20 @@
         </div>
         <article>
            <div class="row">
-               <form class="col s12" action="{{ route('cashier') }}" method="post" id="payment-form">
+               <form class="col s12 m6 l6" action="{{ route('cashier') }}" method="post" id="payment-form">
                    <div class="row">
-                       <div class="input-field col s6">
+                       <div class="input-field col s12">
                            <input class="my-input" id="name" type="text">
                            <label for="name">Nombre de Tarjeta</label>
                        </div>
                    </div>
                    <div class="row">
-                       <div class="input-field col s6">
+                       <div class="input-field col s12">
                            <div class="my-input" id="card"></div>
                        </div>
                    </div>
                    <div class="row">
-                       <div class="input-field col s6">
+                       <div class="input-field col s12">
                         <select name="plan">
                                 <option value="" disabled selected>Elegir Plan de Pago</option>
                                 <option value="1" {{isset($_GET['plan']) && $_GET['plan']==1?'selected':''}}>Mensual -- S/.33.00</option>
@@ -43,13 +43,13 @@
                        </div>
                    </div>
                    <div class="row">
-                       <div class="center-align col s6">
+                       <div class="center-align col s12">
                            <!-- Used to display Element errors. -->
 								<div id="card-errors" role="alert"></div>
                        </div>
                    </div>
                    <div class="row">
-                       <div class="center-align col s6">
+                       <div class="center-align col s12">
                             <button class="btn waves-effect waves-light" type="submit">
                                 Pagar
                             </button>
@@ -57,8 +57,13 @@
                    </div>
 
                </form>
+               <aside>
+                   <div class="col s12 m6 l6">
+                        <img id="promocion" class="responsive-img" src="{{ asset('img/oferta.png') }}" alt="Promoción">
+                   </div>
+               </aside>
            </div>  
-
+           
         </article>
     </section>
 </div>
