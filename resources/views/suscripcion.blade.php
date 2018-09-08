@@ -5,52 +5,68 @@
 @endsection
 
 @section('content')
-<section>
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col s12 m2 l2"></div>
-                <div class="col s12 m8 l8">
-                    <div class="formulario" >
-                        <form action="{{ route('cashier') }}" method="post" id="payment-form">
-                                {{ csrf_field() }}
-                            <label>
-                                <input name="cardholder-name" class="field is-empty" placeholder="Alex Tobar" autocomplete="off">
-                                <span><span>Nombre de la tarjeta</span></span>
-                            </label>
-                            <label>
-                                <div id="card-element" class="field is-empty"></div>
-                                <span><span>N° Tarjeta</span></span>
-                            </label>
-                            <label>Selecciona tu plan de suscripción</label>
-                            <select name="plan">
-                                    <option value="" disabled selected>Elegir Plan de Pago</option>
-                                    <option value="1" {{isset($_GET['plan']) && $_GET['plan']==1?'selected':''}}>Mensual -- S/.33.00</option>
-                                    <option value="2" {{isset($_GET['plan']) && $_GET['plan']==2?'selected':''}}>3 Meses -- S/.90.00</option>
-                                    <option value="3" {{isset($_GET['plan']) && $_GET['plan']==1?'selected':''}}>6 Meses -- S/.180.00</option>
-                                  </select>
-                            <button type="submit">Suscripción</button>
-                            <div class="outcome">
-                                <div class="error"></div>
-                                <div class="success">
-                                    Success! Your Stripe token is <span class="token"></span>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col s12 m2 l2"></div>
 
+
+<!--nuevo form-->
+
+<div class="container">
+    <section>
+        <div class="row">
+            <div class="col s12">
+                <div class="center-align">
+                    <h1>Paga tu Suscripcion</h1>
+                </div>
             </div>
         </div>
-        <!--fin del container-->
-    </article>
-</section>
+        <article>
+           <div class="row">
+               <form class="col s12" action="{{ route('cashier') }}" method="post" id="payment-form">
+                   <div class="row">
+                       <div class="input-field col s6">
+                           <input class="my-input" id="name" type="text">
+                           <label for="name">Nombre de Tarjeta</label>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="input-field col s6">
+                           <div class="my-input" id="card"></div>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="input-field col s6">
+                        <select name="plan">
+                                <option value="" disabled selected>Elegir Plan de Pago</option>
+                                <option value="1" {{isset($_GET['plan']) && $_GET['plan']==1?'selected':''}}>Mensual -- S/.33.00</option>
+                                <option value="2" {{isset($_GET['plan']) && $_GET['plan']==2?'selected':''}}>3 Meses -- S/.90.00</option>
+                                <option value="3" {{isset($_GET['plan']) && $_GET['plan']==1?'selected':''}}>6 Meses -- S/.180.00</option>
+                              </select>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="center-align col s6">
+                           <!-- Used to display Element errors. -->
+								<div id="card-errors" role="alert"></div>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="center-align col s6">
+                            <button class="btn waves-effect waves-light" type="submit">
+                                Pagar
+                            </button>
+                       </div>
+                   </div>
+
+               </form>
+           </div>  
+
+        </article>
+    </section>
+</div>
 @endsection
 
 @section('scripts')
 	<script src="https://js.stripe.com/v3/"></script><!--add libreria Stripe-->
-    <script src="{{ asset('js/customStripe2.js') }}"></script>
+    <script src="{{ asset('js/customStripe.js') }}"></script>
     <script type="text/javascript">
 		$(document).ready(function(){
 		    $('select').formSelect();
