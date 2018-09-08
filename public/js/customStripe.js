@@ -3,25 +3,45 @@
  * Montar formulario de stripe 
  */
 var stripe = Stripe('pk_test_3edeNOdFS1hDivtTiMIanqQr');
-var elements = stripe.elements();
+var elements = stripe.elements({
+  fonts: [
+    {
+      cssSrc: 'https://fonts.googleapis.com/css?family=Roboto',
+    },
+  ],
+  // Stripe's examples are localized to specific languages, but if
+  // you wish to have Elements automatically detect your user's locale,
+  // use `locale: 'auto'` instead.
+  locale: window.__exampleLocale
+});
 
-var style = {
-  base: {
-    fontSize: '16px',
-  },  
-};
+var card = elements.create('card', {
+  iconStyle: 'solid',
+  style: {
+    base: {
+      iconColor: '#8798AB',
+      color: '#8798AB',
+      fontWeight: 500,
+      fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
+      fontSize: '16px',
+      fontSmoothing: 'antialiased',
 
-// Seleccionar elementoo Tarjeta
-var cardN = elements.create('cardNumber', {style: style});
-var cardE = elements.create('cardExpiry', {style: style});
-var cardCvc = elements.create('cardCvc', {style:style});
+      ':-webkit-autofill': {
+        color: '#fce883',
+      },
+      '::placeholder': {
+        color: '#8798AB',
+      },
+    },
+    invalid: {
+      iconColor: '#8798AB',
+      color: '#8798AB',
+    },
+  },
+});
+card.mount('#card');
 
-// Add an instance of the card Element into the `card-element` <div>.
-cardN.mount('#card-numero');
-cardE.mount('#card-exp');
-cardCvc.mount('#card-cvc');
-
-cardN.addEventListener('change', function(event) {
+card.addEventListener('change', function(event) {
   var displayError = document.getElementById('card-errors');
   if (event.error) {
     displayError.textContent = event.error.message;
