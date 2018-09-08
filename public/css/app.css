@@ -1,6 +1,21 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);.navbar-laravel {
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
+
+.navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/*para que el logo tenga un tamaño*/
+
+.brand-logo {
+  height: 100%;
+}
+
+.brand-logo img {
+  max-width: 200px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
 }
 

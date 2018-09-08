@@ -30,6 +30,13 @@ class User extends Authenticatable
     ];
 
     /**
+     * Get the phone record associated with the user.
+     */
+    public function profesor(){
+        return $this->hasOne('App\Profesor');
+    }
+
+    /**
      * Metodo para saber si un usuario esta suscrito a cualquier tipo de plan
      * 
      *  @return bool | true si esta suscrito, false sino lo esta
@@ -53,6 +60,17 @@ class User extends Authenticatable
         if($this->subscribed('midYear'))
             return 'midYear';
 
+        return false;
+    }
+    /**
+     * Metodo para verificar si este usuario es un profesor
+     * 
+     * @return bool 
+     */
+    public function isProfesor(){
+        if($this->profesor){
+            return true;
+        }
         return false;
     }
 }

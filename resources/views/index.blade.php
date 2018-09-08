@@ -6,6 +6,7 @@
 {{session('mensaje')}}
 @auth
     {{Auth::user()->tipoSuscripcion()}}    
+    {{Auth::user()->isProfesor()?"es Profesor":"No es profesor"}}
 @endauth
   <div class="section no-pad-bot" id="index-banner">
     <div class="container" id="banner">

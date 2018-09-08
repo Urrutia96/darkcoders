@@ -76501,10 +76501,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
-        return {};
+        return {
+            'alert': {
+                'value': true,
+                'mensaje': 'Este es un mensajito',
+                'color': 'info'
+            }
+        };
     },
     props: ['admin'],
     destroyed: function destroyed() {
@@ -76536,11 +76551,35 @@ var render = function() {
             "v-layout",
             { attrs: { "align-center": "" } },
             [
-              _c("v-flex", [
-                _c("h3", { staticClass: "display-3 text-xs-center" }, [
-                  _vm._v("Welcome " + _vm._s(_vm.admin.name))
-                ])
-              ])
+              _c(
+                "v-flex",
+                [
+                  _c(
+                    "v-alert",
+                    {
+                      attrs: {
+                        value: _vm.alert.value,
+                        color: _vm.alert.color,
+                        icon: "check_circle",
+                        outline: "",
+                        dismissible: ""
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(_vm.alert.mensaje) +
+                          "\n                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("h3", { staticClass: "display-3 text-xs-center" }, [
+                    _vm._v("Welcome " + _vm._s(_vm.admin.name))
+                  ])
+                ],
+                1
+              )
             ],
             1
           )
@@ -76847,7 +76886,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.quillWrapper .ql-snow.ql-toolbar {\n    padding-top: 8px;\n    padding-bottom: 4px;\n    background-color: gray;\n}\n", ""]);
+exports.push([module.i, "\n.quillWrapper .ql-snow.ql-toolbar {\r\n  padding-top: 8px;\r\n  padding-bottom: 4px;\r\n  background-color: gray;\n}\r\n", ""]);
 
 // exports
 
@@ -76922,35 +76961,109 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            content: '',
+	data: function data() {
+		return {
+			nombre: "",
+			content: "",
+			editorOption: {
+				modules: {
+					syntax: {
+						highlight: function highlight(text) {
+							return __WEBPACK_IMPORTED_MODULE_1_highlight_js___default.a.highlightAuto(text).value;
+						}
+					}
+				}
+			},
+			categorias: Array(),
+			categoria: "",
+			alert: {
+				value: false,
+				mensaje: "",
+				color: "" // success, info, warning or error alert
+			}
+		};
+	},
+	computed: {
+		contentCode: function contentCode() {
+			return __WEBPACK_IMPORTED_MODULE_1_highlight_js___default.a.highlightAuto(this.content).value;
+		}
+	},
+	created: function created() {
+		this.categories();
+	},
+	props: ["admin"],
+	components: {
+		VueEditor: __WEBPACK_IMPORTED_MODULE_0_vue2_editor__["VueEditor"]
+	},
+	methods: {
+		categories: function categories() {
+			var _this = this;
 
-            editorOption: {
-                modules: {
-                    syntax: {
-                        highlight: function highlight(text) {
-                            return __WEBPACK_IMPORTED_MODULE_1_highlight_js___default.a.highlightAuto(text).value;
-                        }
-                    }
-                }
-            }
-        };
-    },
-    computed: {
-        contentCode: function contentCode() {
-            return __WEBPACK_IMPORTED_MODULE_1_highlight_js___default.a.highlightAuto(this.content).value;
-        }
-    },
-    props: ['admin'],
-    components: {
-        VueEditor: __WEBPACK_IMPORTED_MODULE_0_vue2_editor__["VueEditor"]
-    }
+			axios.get("/api/getCateries").then(function (response) {
+				_this.categorias = response.data;
+			});
+		},
+		guardar: function guardar() {
+			var _this2 = this;
+
+			axios({
+				method: "post",
+				url: "/api/crearcurso",
+				data: {
+					nombre: this.nombre,
+					categoria: this.categoria,
+					descripcion: this.content,
+					profesor: this.admin
+				},
+				headers: { 'Accept': 'application/json' }
+			}).then(function (response) {
+				var result = response.data['result'];
+				if (result == true) {
+					_this2.alert.value = true;
+					_this2.alert.mensaje = 'Curso Creado Correctamente!';
+					_this2.alert.color = 'success';
+					_this2.content = '';
+					_this2.categoria = '';
+					_this2.descripcion = '';
+					_this2.nombre = '';
+					_this2.$refs.form.reset();
+				} else {
+					_this2.alert.value = true;
+					_this2.alert.mensaje = 'Ha ocurrido un error, por favor revisa bien los datos';
+					_this2.alert.color = 'error';
+				}
+			});
+		}
+	}
 });
 
 /***/ }),
@@ -94512,59 +94625,129 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-card",
+    "div",
     [
-      _c("v-card-title", { attrs: { "primary-title": "" } }, [
-        _vm._v("\n        Nuevo Curso\n      ")
-      ]),
+      _c(
+        "v-alert",
+        {
+          attrs: {
+            value: _vm.alert.value,
+            color: _vm.alert.color,
+            icon: "check_circle",
+            outline: "",
+            dismissible: ""
+          }
+        },
+        [_vm._v("\n\t\t" + _vm._s(_vm.alert.mensaje) + "\n\t")]
+      ),
       _vm._v(" "),
       _c(
-        "v-card-text",
+        "form",
+        {
+          ref: "form",
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.guardar($event)
+            }
+          }
+        },
         [
-          _c("v-divider"),
-          _vm._v(" "),
           _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
+            "v-card",
             [
+              _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                _vm._v("\n\tNuevo Curso\n  ")
+              ]),
+              _vm._v(" "),
               _c(
-                "v-flex",
-                { attrs: { xs12: "", sm12: "", md12: "" } },
+                "v-card-text",
                 [
-                  _c("v-text-field", {
-                    attrs: { label: "Nombre del Curso", outline: "" }
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _c(
+                    "v-layout",
+                    { attrs: { row: "", wrap: "" } },
+                    [
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm12: "", md12: "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: { label: "Nombre del Curso", outline: "" },
+                            model: {
+                              value: _vm.nombre,
+                              callback: function($$v) {
+                                _vm.nombre = $$v
+                              },
+                              expression: "nombre"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm12: "", md12: "" } },
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              items: _vm.categorias,
+                              label: "Categoria",
+                              "item-text": "nombre",
+                              "item-value": "id",
+                              outline: ""
+                            },
+                            model: {
+                              value: _vm.categoria,
+                              callback: function($$v) {
+                                _vm.categoria = $$v
+                              },
+                              expression: "categoria"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", [_vm._v("Descripcion:")]),
+                  _vm._v(" "),
+                  _c("vue-editor", {
+                    attrs: { editorOptions: _vm.editorOption },
+                    model: {
+                      value: _vm.content,
+                      callback: function($$v) {
+                        _vm.content = $$v
+                      },
+                      expression: "content"
+                    }
                   })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                [
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { attrs: { color: "success", large: "", type: "submit" } },
+                    [_vm._v("Crear")]
+                  ),
+                  _vm._v(" "),
+                  _c("v-btn", [_vm._v("text")])
                 ],
                 1
               )
             ],
             1
-          ),
-          _vm._v(" "),
-          _c("vue-editor", {
-            attrs: { editorOptions: _vm.editorOption },
-            model: {
-              value: _vm.content,
-              callback: function($$v) {
-                _vm.content = $$v
-              },
-              expression: "content"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-card-actions",
-        [
-          _c("v-spacer"),
-          _vm._v(" "),
-          _c("v-btn", { attrs: { color: "success", large: "" } }, [
-            _vm._v("Crear")
-          ]),
-          _vm._v(" "),
-          _c("v-btn", [_vm._v("text")])
+          )
         ],
         1
       )

@@ -13,6 +13,9 @@ var card = elements.create('card', {
             color: '#8898AA',
         },
     },
+    focus:{
+        
+    },
     invalid: {
         iconColor: '#e85746',
         color: '#e85746',

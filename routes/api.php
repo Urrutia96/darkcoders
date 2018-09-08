@@ -17,3 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('/getUsers','Api\UsersController@getUsers');
+Route::get('/getCateries','Api\UsersController@getCategories');
+Route::post('/crearcurso','Api\UsersController@crearCurso');
