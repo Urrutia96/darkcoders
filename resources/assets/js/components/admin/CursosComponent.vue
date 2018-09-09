@@ -3,7 +3,7 @@
 		<v-alert
 			:value="alert.value"
 			:color="alert.color"
-			icon="check_circle"
+			:icon="alert.icon"
 			outline
 			dismissible
 			>
@@ -34,10 +34,19 @@
 		  		  item-value="id"
 				  outline
 			  ></v-select>
-	  	  </v-flex>     	        	  	
+	  	  </v-flex>   
+				<v-flex xs12 sm12 md12>
+					<v-textarea
+						outline
+						v-model="content"
+						label="Muestra"
+						maxlength="100"
+        	></v-textarea>
+				</v-flex>
 	  	</v-layout>
-				<div>Descripcion:</div>
-	  	<vue-editor v-model="content" :editorOptions="editorOption"></vue-editor>
+		<div>Descripcion:</div>
+	  	<vue-editor v-model="descripcion" :editorOptions="editorOption"></vue-editor>
+
 	  </v-card-text>
 	  <v-card-actions>
 				<v-spacer></v-spacer>
@@ -52,12 +61,14 @@
 
 <script>
 import { VueEditor, Quill } from "vue2-editor";
+
 import hljs from "highlight.js";
 export default {
   data: function() {
 	return {
 	  nombre: "",
 	  content: "",
+	  descripcion:"",
 	  editorOption: {
 		modules: {
 		  syntax: {
@@ -70,7 +81,8 @@ export default {
 	  alert: {
 		value: false,
 		mensaje: "",
-		color: "" // success, info, warning or error alert
+		color: "", // success, info, warning or error alert
+		icon: ''
 	  }
 	};
   },
@@ -109,17 +121,22 @@ export default {
 			  this.alert.value = true;
 			  this.alert.mensaje = 'Curso Creado Correctamente!';
 			  this.alert.color ='success';
-			  this.content ='';
-			  this.categoria='';
-			  this.descripcion = '';
-			  this.nombre = '';
-			  this.$refs.form.reset();
+			  this.alert.icon = 'check_circle';
+			  this.clear();
 		  }else{
 			this.alert.value = true;
-			this.alert.mensaje = 'Ha ocurrido un error, por favor revisa bien los datos';
+			this.alert.mensaje = response.data['mensaje'];
+			this.alert.icon = 'error';
 			this.alert.color ='error';
 		  }
 	  });
+	},
+	clear: function(){
+		this.content ='';
+		this.categoria='';
+		this.descripcion = '';
+		this.nombre = '';
+		this.$refs.form.reset();
 	}
   }
 };

@@ -13,8 +13,6 @@ use App\User;
 
 class UsersController extends Controller
 {
-
-    
     /**
      * Mostrar Index
      * 
@@ -78,7 +76,7 @@ class UsersController extends Controller
      */
      public function suscripcion(){
         if(!Auth::user()->suscrito()){
-            return view('pagar');
+            return view('suscripcion');
         }else{
             return redirect()->route('home')->with('mensaje','Ya estas suscrito, enjoy!');
         }

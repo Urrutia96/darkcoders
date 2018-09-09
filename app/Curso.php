@@ -10,7 +10,7 @@ class Curso extends Model
     protected $table ="curso";
 
     protected $fillable = [
-        'categoria_id','profesor_id','nombre','descripcion'
+        'categoria_id','profesor_id','nombre','slug','descripcion'
     ];
 
     /**
@@ -19,5 +19,11 @@ class Curso extends Model
     public function profesor()
     {
         return $this->belongsTo('App\Profesor');
+    }
+    /**
+     * 
+     */
+    public function categoria(){
+        return $this->belongsTo('App\Categoria');
     }
 }

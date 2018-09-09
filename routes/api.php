@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/getUsers','Api\UsersController@getUsers');
 Route::get('/getCateries','Api\UsersController@getCategories');
 Route::post('/crearcurso','Api\UsersController@crearCurso');
+Route::get('/getCursos','Api\UsersController@getCursos');

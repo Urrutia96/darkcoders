@@ -26,7 +26,7 @@
         </v-list-tile>
         <v-list-group
             prepend-icon="dashboard" 
-            value="false" v-model="cursosMenu" no-action
+            value="true" v-model="cursosMenu" no-action
             >
             <v-list-tile slot="activator">
                 <v-list-tile-title>Cursos</v-list-tile-title>
@@ -37,8 +37,8 @@
                 <v-icon>add</v-icon>
               </v-list-tile-action>
             </v-list-tile>
-            <v-list-tile @click="userAction">
-              <v-list-tile-title>Ver Cursos</v-list-tile-title>              
+            <v-list-tile @click="mostrarCursosAction">
+              <v-list-tile-title>Mis Cursos</v-list-tile-title>              
               <v-list-tile-action>
                 <v-icon>remove_red_eye</v-icon>
               </v-list-tile-action>
@@ -93,7 +93,7 @@ export default {
       componente: "home-dash",
       notification: 0,
       usersMenu: false,
-      cursosMenu:false
+      cursosMenu:true
     }
   },
   methods:{
@@ -105,6 +105,9 @@ export default {
     },
     cursosAction: function(){
       this.componente = "cursos-dash";
+    },
+    mostrarCursosAction: function(){
+      this.componente = "mostrar-curso-dash";
     }
   }
 };

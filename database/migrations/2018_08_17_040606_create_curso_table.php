@@ -20,6 +20,7 @@ class CreateCursoTable extends Migration
             $table->integer('profesor_id')->unsigned();
             $table->foreign('profesor_id')->references('id')->on('profesor');
             $table->string('nombre');
+            $table->string('slug')->unique();
             $table->text('descripcion');
             $table->timestamps();
         });
