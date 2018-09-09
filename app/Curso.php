@@ -10,7 +10,7 @@ class Curso extends Model
     protected $table ="curso";
 
     protected $fillable = [
-        'categoria_id','profesor_id','nombre','descripcion'
+        'categoria_id','profesor_id','nombre','slug','descripcion'
     ];
 
     /**

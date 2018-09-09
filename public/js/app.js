@@ -33098,6 +33098,7 @@ Vue.component('dashboard', __webpack_require__(49));
 Vue.component('home-dash', __webpack_require__(52));
 Vue.component('users-dash', __webpack_require__(55));
 Vue.component('cursos-dash', __webpack_require__(58));
+Vue.component('mostrar-curso-dash', __webpack_require__(250));
 Vue.component('registro', __webpack_require__(243));
 
 var app = new Vue({
@@ -76185,6 +76186,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     cursosAction: function cursosAction() {
       this.componente = "cursos-dash";
+    },
+    mostrarCursosAction: function mostrarCursosAction() {
+      this.componente = "mostrar-curso-dash";
     }
   }
 });
@@ -76293,7 +76297,7 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "v-list-tile",
-                    { on: { click: _vm.userAction } },
+                    { on: { click: _vm.mostrarCursosAction } },
                     [
                       _c("v-list-tile-title", [_vm._v("Ver Cursos")]),
                       _vm._v(" "),
@@ -76986,6 +76990,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -77008,7 +77021,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			alert: {
 				value: false,
 				mensaje: "",
-				color: "" // success, info, warning or error alert
+				color: "", // success, info, warning or error alert
+				icon: ''
 			}
 		};
 	},
@@ -77051,17 +77065,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 					_this2.alert.value = true;
 					_this2.alert.mensaje = 'Curso Creado Correctamente!';
 					_this2.alert.color = 'success';
-					_this2.content = '';
-					_this2.categoria = '';
-					_this2.descripcion = '';
-					_this2.nombre = '';
-					_this2.$refs.form.reset();
+					_this2.alert.icon = 'check_circle';
+					_this2.clear();
 				} else {
 					_this2.alert.value = true;
-					_this2.alert.mensaje = 'Ha ocurrido un error, por favor revisa bien los datos';
+					_this2.alert.mensaje = response.data['mensaje'];
+					_this2.alert.icon = 'error';
 					_this2.alert.color = 'error';
 				}
 			});
+		},
+		clear: function clear() {
+			this.content = '';
+			this.categoria = '';
+			this.descripcion = '';
+			this.nombre = '';
+			this.$refs.form.reset();
 		}
 	}
 });
@@ -94633,12 +94652,12 @@ var render = function() {
           attrs: {
             value: _vm.alert.value,
             color: _vm.alert.color,
-            icon: "check_circle",
+            icon: _vm.alert.icon,
             outline: "",
             dismissible: ""
           }
         },
-        [_vm._v("\n\t\t" + _vm._s(_vm.alert.mensaje) + "\n\t")]
+        [_vm._v("\n\t\t\t" + _vm._s(_vm.alert.mensaje) + "\n\t\t")]
       ),
       _vm._v(" "),
       _c(
@@ -94657,7 +94676,7 @@ var render = function() {
             "v-card",
             [
               _c("v-card-title", { attrs: { "primary-title": "" } }, [
-                _vm._v("\n\tNuevo Curso\n  ")
+                _vm._v("\n\t\tNuevo Curso\n\t  ")
               ]),
               _vm._v(" "),
               _c(
@@ -94709,23 +94728,28 @@ var render = function() {
                           })
                         ],
                         1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "", sm12: "", md12: "" } },
+                        [
+                          _c("v-textarea", {
+                            attrs: { outline: "", label: "Descripcion" },
+                            model: {
+                              value: _vm.content,
+                              callback: function($$v) {
+                                _vm.content = $$v
+                              },
+                              expression: "content"
+                            }
+                          })
+                        ],
+                        1
                       )
                     ],
                     1
-                  ),
-                  _vm._v(" "),
-                  _c("div", [_vm._v("Descripcion:")]),
-                  _vm._v(" "),
-                  _c("vue-editor", {
-                    attrs: { editorOptions: _vm.editorOption },
-                    model: {
-                      value: _vm.content,
-                      callback: function($$v) {
-                        _vm.content = $$v
-                      },
-                      expression: "content"
-                    }
-                  })
+                  )
                 ],
                 1
               ),
@@ -95277,6 +95301,188 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 249 */,
+/* 250 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(251)
+/* template */
+var __vue_template__ = __webpack_require__(252)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\admin\\MostrarCursosComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-cc79bfac", Component.options)
+  } else {
+    hotAPI.reload("data-v-cc79bfac", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 251 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            page: 1,
+            content: Array(),
+            show: true
+        };
+    },
+    created: function created() {
+        this.cursos();
+    },
+    methods: {
+        cursos: function cursos() {
+            var _this = this;
+
+            axios.get('/api/getCursos?page=' + this.page).then(function (response) {
+                _this.content = response.data;
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 252 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-container",
+    { staticClass: "grid-list-md" },
+    [
+      _c(
+        "v-layout",
+        { attrs: { row: "", wrap: "" } },
+        _vm._l(_vm.content.data, function(cursos) {
+          return _c(
+            "v-flex",
+            { key: cursos.id, attrs: { xs12: "", sm6: "", md4: "", xs4: "" } },
+            [
+              _c(
+                "v-card",
+                [
+                  _c("v-card-title", [_vm._v(_vm._s(cursos.nombre))]),
+                  _vm._v(" "),
+                  _c("v-card-text", {
+                    domProps: { innerHTML: _vm._s(cursos.descripcion) }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c(
+                        "v-btn",
+                        { attrs: { href: "", large: "", color: "info" } },
+                        [_vm._v("Ver")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        })
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "text-xs-center" },
+        [
+          _c("v-pagination", {
+            attrs: { length: _vm.content.last_page, circle: "", dark: "" },
+            model: {
+              value: _vm.page,
+              callback: function($$v) {
+                _vm.page = $$v
+              },
+              expression: "page"
+            }
+          })
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-cc79bfac", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

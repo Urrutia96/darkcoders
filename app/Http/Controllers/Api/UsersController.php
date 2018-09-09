@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Categoria;
 use App\Curso;
+use Illuminate\Support\Str as Str;
+use Illuminate\Support\Facades\Validator;
 class UsersController extends Controller
 {
     /**
@@ -40,13 +42,38 @@ class UsersController extends Controller
             $user = User::findOrFail($user_request['id']);
             $curso = new Curso();
             $curso->nombre = $nombre;
+            $curso->slug = Str::slug($nombre);
             $curso->categoria_id = $categoria;
             $curso->descripcion = $descripcion;
-            $curso->profesor_id= $user->profesor->id;
-            if($curso->save()){
-                return response()->json(['result'=>true]);
+            if($user->isProfesor()){
+                $validacion = Validator::make([
+                    'slug'=>$curso->slug
+                ],[
+                    'slug'=>'required|unique:curso,slug'
+                ],[
+                    'slug.unique'=>'ya existe un Curso con este nombre'
+                ]);
+                if($validacion->fails()){
+                    return response()->json(['result'=>false,'mensaje'=>$validacion->errors()->first('slug')]);
+                }
+                $curso->profesor_id= $user->profesor->id;
+                if($curso->save()){
+                    return response()->json(['result'=>true]);
+                }else{
+                    return response()->json(['result'=>false,'mensaje'=>'Lo sentimos, tenemos problemas, por favor intente mas tarde']);
+                }                 
+            }else{
+                return response()->json(['result'=>false,'mensaje'=>'Pero tu que haces aqui? no eres un profesor']);
             }
-            return response()->json(['result'=>false]);
         }
+        return response()->json(['result'=>false,'mensaje'=>'Pero tu que haces aqui? no estas ni logeado!']);
+    }
+    /**
+     * 
+     * 
+     * 
+     */
+    public function getCursos(){
+        return response()->json(Curso::paginate(15));
     }
 }

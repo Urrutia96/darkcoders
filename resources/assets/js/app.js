@@ -33,6 +33,7 @@ Vue.component('dashboard', require('./components/layouts/DashboardComponent.vue'
 Vue.component('home-dash',require('./components/admin/HomeComponent.vue'));
 Vue.component('users-dash',require('./components/admin/UsersComponent.vue'));
 Vue.component('cursos-dash',require('./components/admin/CursosComponent.vue'));
+Vue.component('mostrar-curso-dash',require('./components/admin/MostrarCursosComponent.vue'));
 Vue.component('registro',require('./components/RegistroComponent.vue'));
 
 const app = new Vue({

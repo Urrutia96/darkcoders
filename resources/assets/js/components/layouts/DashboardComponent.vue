@@ -37,7 +37,7 @@
                 <v-icon>add</v-icon>
               </v-list-tile-action>
             </v-list-tile>
-            <v-list-tile @click="userAction">
+            <v-list-tile @click="mostrarCursosAction">
               <v-list-tile-title>Ver Cursos</v-list-tile-title>              
               <v-list-tile-action>
                 <v-icon>remove_red_eye</v-icon>
@@ -105,6 +105,9 @@ export default {
     },
     cursosAction: function(){
       this.componente = "cursos-dash";
+    },
+    mostrarCursosAction: function(){
+      this.componente = "mostrar-curso-dash";
     }
   }
 };
