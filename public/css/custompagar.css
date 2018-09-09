@@ -22,24 +22,24 @@
 
 #promocion{
   margin: 0 auto;
-  animation: rotacion 1s ease-in;
+  animation: slideIn 1000ms ease-in;
 }
 
 #promocion:hover{
-  animation: rotacion 1s ease-in;
+  /*animation: rotacion 1s ease-in;*/
 }
 
 @keyframes slideIn{
   0%{
-    margin-top: 150%;
+    margin-left: 150%;
     opacity: 0.25;
   }
   60%{
-    margin-top: -10%;
-    opacity: 0.5;
+    margin-left: -10%;
+    opacity: 0.25;
   }
   100%{
-    margin-top: 0;
+    margin-left: 0;
     opacity: 1;
   }
 }

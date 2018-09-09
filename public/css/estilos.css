@@ -41,12 +41,6 @@ body{
 h1,h2,h3,h4,h5{
 	font-family: fOswald;
 }
-.card{
-	width: auto;
-	height: 100px;
-	background: white;
-	padding: 0.5em;
-}
 .panel{
 	 font-size: 2em;
 	 text-align: justify;
@@ -95,3 +89,5 @@ div #banner{
     width: 100%;
     
 };
+/*seccion de cursos destacados del Index*/
+
