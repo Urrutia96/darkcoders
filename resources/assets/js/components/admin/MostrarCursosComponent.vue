@@ -2,11 +2,12 @@
     <v-container class="grid-list-md">
         <v-layout row wrap>
             <v-flex xs12 sm6 md4 xs4 v-for="cursos in content.data" :key="cursos.id">
-                <v-card>
-                    <v-card-title>{{cursos.nombre}}</v-card-title>
+                <v-card height="230px">
+                    <v-card-title><div class="text-xs-center">{{cursos.nombre}}</div></v-card-title>
                     <v-card-text v-html="cursos.descripcion">
                     </v-card-text>
                     <v-card-actions>
+                        <v-spacer></v-spacer>
                         <v-btn href="" large color="info">Ver</v-btn>
                     </v-card-actions>
                 </v-card>
@@ -34,6 +35,11 @@ export default {
     },
     created:function(){
         this.cursos();
+    },
+    watch:{
+        page: function(){
+            this.cursos();
+        }
     },
     methods:{
         cursos:function(){

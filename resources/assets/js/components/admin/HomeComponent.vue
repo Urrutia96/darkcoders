@@ -12,7 +12,7 @@
                         >
                         {{alert.mensaje}}
                     </v-alert>
-                    <h3 class="display-3 text-xs-center">Welcome {{admin.name}}</h3>
+                    <h3 class="display-3 text-xs-center">Welcome, {{admin.name}}</h3>
                 </v-flex>
             </v-layout>
         </v-container>

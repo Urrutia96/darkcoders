@@ -51,7 +51,8 @@ class UsersController extends Controller
                 ],[
                     'slug'=>'required|unique:curso,slug'
                 ],[
-                    'slug.unique'=>'ya existe un Curso con este nombre'
+                    'slug.unique'=>'ya existe un Curso con este nombre',
+                    'slug.required'=>'El nombre del curso es obligatorio'
                 ]);
                 if($validacion->fails()){
                     return response()->json(['result'=>false,'mensaje'=>$validacion->errors()->first('slug')]);
@@ -74,6 +75,6 @@ class UsersController extends Controller
      * 
      */
     public function getCursos(){
-        return response()->json(Curso::paginate(15));
+        return response()->json(Curso::with('categoria')->paginate(6));
     }
 }

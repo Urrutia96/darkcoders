@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Stripe\{Stripe, Charge, Customer};
 use App\User;
 use Auth;
+use App\Profesor;
 
 class PaymentsController extends Controller
 {
@@ -45,6 +46,10 @@ class PaymentsController extends Controller
                 #algo por defecto
                 break;
         }
+        $profesor = new Profesor();
+        $profesor->user_id = Auth::user()->id;
+        $profesor->descripcion = '';
+        $profesor->save();
         if($user->suscrito())
             return redirect()->route('thanks');
         

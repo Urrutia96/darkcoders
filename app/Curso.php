@@ -20,4 +20,10 @@ class Curso extends Model
     {
         return $this->belongsTo('App\Profesor');
     }
+    /**
+     * 
+     */
+    public function categoria(){
+        return $this->belongsTo('App\Categoria');
+    }
 }

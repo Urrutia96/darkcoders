@@ -39,12 +39,13 @@
 					<v-textarea
 						outline
 						v-model="content"
-						label="Descripcion"
+						label="Muestra"
+						maxlength="100"
         	></v-textarea>
 				</v-flex>
 	  	</v-layout>
-			<!--<div>Descripcion:</div>
-	  	<vue-editor v-model="content" :editorOptions="editorOption"></vue-editor>-->
+		<div>Descripcion:</div>
+	  	<vue-editor v-model="descripcion" :editorOptions="editorOption"></vue-editor>
 
 	  </v-card-text>
 	  <v-card-actions>
@@ -67,6 +68,7 @@ export default {
 	return {
 	  nombre: "",
 	  content: "",
+	  descripcion:"",
 	  editorOption: {
 		modules: {
 		  syntax: {

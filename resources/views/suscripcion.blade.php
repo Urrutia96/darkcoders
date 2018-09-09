@@ -21,6 +21,17 @@
         <article>
            <div class="row">
                <form class="col s12 m6 l6" action="{{ route('cashier') }}" method="post" id="payment-form">
+                {{ csrf_field() }}
+                    <div class="row">
+                        <div class="input-field col s12">
+                        <select name="plan">
+                                <option value="" disabled selected>Elegir Plan de Pago</option>
+                                <option value="1" {{isset($_GET['plan']) && $_GET['plan']==1?'selected':''}}>Mensual -- S/.33.00</option>
+                                <option value="2" {{isset($_GET['plan']) && $_GET['plan']==2?'selected':''}}>3 Meses -- S/.90.00</option>
+                                <option value="3" {{isset($_GET['plan']) && $_GET['plan']==3?'selected':''}}>6 Meses -- S/.180.00</option>
+                            </select>
+                        </div>
+                    </div>
                    <div class="row">
                        <div class="input-field col s12">
                            <input class="my-input" id="name" type="text">
@@ -32,16 +43,7 @@
                            <div class="my-input" id="card"></div>
                        </div>
                    </div>
-                   <div class="row">
-                       <div class="input-field col s12">
-                        <select name="plan">
-                                <option value="" disabled selected>Elegir Plan de Pago</option>
-                                <option value="1" {{isset($_GET['plan']) && $_GET['plan']==1?'selected':''}}>Mensual -- S/.33.00</option>
-                                <option value="2" {{isset($_GET['plan']) && $_GET['plan']==2?'selected':''}}>3 Meses -- S/.90.00</option>
-                                <option value="3" {{isset($_GET['plan']) && $_GET['plan']==1?'selected':''}}>6 Meses -- S/.180.00</option>
-                              </select>
-                       </div>
-                   </div>
+                   
                    <div class="row">
                        <div class="center-align col s12">
                            <!-- Used to display Element errors. -->
