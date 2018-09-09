@@ -23,6 +23,8 @@ Route::post('cashier','Users\PaymentsController@store')->name('cashier')->middle
 //Prueba de vista de HOME
 Route::get('index', 'Users\UsersController@index');
 Route::get('suscripcion', 'Users\UsersController@suscripcion')->name('suscripcion')->middleware('auth');
+//seccion de cursos
+Route::get('cursos', 'Users\UsersController@cursos');
 //prueba vista de Suscripcion
 Route::get('pagar', 'Users\UsersController@pagar')->name('pagar');
 Route::get('thanks', 'Users\UsersController@thanks')->name('thanks')->middleware('auth');

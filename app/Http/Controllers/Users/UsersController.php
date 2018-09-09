@@ -89,7 +89,9 @@ class UsersController extends Controller
      public function pagar(){
          return view('suscripcion');
      }   
-
+     public function cursos(){
+         return view('cursos');
+     }
     /**
      * inicio de session
      * 
