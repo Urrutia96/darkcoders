@@ -25,6 +25,8 @@ Route::get('index', 'Users\UsersController@index');
 Route::get('suscripcion', 'Users\UsersController@suscripcion')->name('suscripcion')->middleware('auth');
 //seccion de cursos
 Route::get('cursos', 'Users\UsersController@cursos');
+//detalles de curso
+Route::get('detalle-Curso', 'Users\UsersController@dCursos');
 //prueba vista de Suscripcion
 Route::get('pagar', 'Users\UsersController@pagar')->name('pagar');
 Route::get('thanks', 'Users\UsersController@thanks')->name('thanks')->middleware('auth');
