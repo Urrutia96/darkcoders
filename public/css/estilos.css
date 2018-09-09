@@ -90,4 +90,6 @@ div #banner{
     
 };
 /*seccion de cursos destacados del Index*/
-
+legend{
+    border: 1px solid black;
+}

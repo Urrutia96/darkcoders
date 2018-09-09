@@ -28,7 +28,7 @@
   
     <div class="section cyan lighten-5">
         <div class="col s12 center-align">
-            <h1 class="orange-text lighten-5-text">Cursos Destacatacados</h1>
+            <h1 class="orange-text lighten-5-text">Cursos Destacados</h1>
         </div>
         <div class="container">
             <div class="row" id="cursos-destacados">
