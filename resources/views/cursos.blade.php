@@ -7,7 +7,7 @@
 <br>
 <br>
     <!--Seccion de Cursos-->
-    <div class="section cyan lighten-5">
+    <div class="section">
             <div class="col s12 center-align">
                 <h1 class="orange-text lighten-5-text">Cursos Vigentes</h1>
             </div>

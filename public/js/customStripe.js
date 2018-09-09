@@ -44,6 +44,8 @@ card.mount('#card');
 card.addEventListener('change', function(event) {
   var displayError = document.getElementById('card-errors');
   if (event.error) {
+    var toastHTML = '<span>'+event.error.message+'</span>';
+    M.toast({html: toastHTML, classes: 'rounded'});
     displayError.textContent = event.error.message;
   } else {
     displayError.textContent = '';
