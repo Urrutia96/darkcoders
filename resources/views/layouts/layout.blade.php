@@ -36,6 +36,8 @@
 							@else
 								<li><a href="">Precio</a></li>
 							@endif
+						@else 
+						<li><a href="">Precio</a></li>
 						@endauth
 						<li>
 							@auth
