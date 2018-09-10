@@ -93,3 +93,10 @@ div #banner{
 legend{
     border: 1px solid black;
 }
+.box-items{
+    background: #000;
+    height: 400px;
+    border-radius: 10px;
+    border: 1px solid whitesmoke;
+    padding: 1em;
+}

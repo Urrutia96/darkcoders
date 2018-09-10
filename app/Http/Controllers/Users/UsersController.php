@@ -86,10 +86,16 @@ class UsersController extends Controller
      */
      public function pagar(){
          return view('suscripcion');
-     }   
-
+     }
+     /*cursos*/   
      public function cursos(){
          return view('cursos');
+     }
+     /**
+     *detalles del curso Seleccionado
+     */
+     public function dCursos(){
+        return view('deCursos');
      }
     /**
      * inicio de session
