@@ -33,7 +33,7 @@ Route::get('thanks', 'Users\UsersController@thanks')->name('thanks')->middleware
 
 //Rutas para admin/dashboard
 Route::group(['prefix'=>'admin','middleware'=>['auth','profesor']], function(){
-    Route::get('/', 'Admin\HomeController@index');
+    Route::get('/', 'Admin\HomeController@index')->name('admin.home');
     Route::get('/users', 'Admin\UsersController@index');
     Route::get('/cursos', 'Admin\CursosController@index');
 });
